@@ -1,6 +1,5 @@
 Unique Davis
 Charlotte, NC 28262
-
 uniquedavis2004@gmail.com
 
 Aspiring data scientist with hands-on experience in Python, Java, SQL, SAS, and Excel, eager to deepen my
