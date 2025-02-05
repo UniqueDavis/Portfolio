@@ -1,6 +1,6 @@
 <!--Section 1: Introduce your self-->
 ## About Me
-![image](https://github.com/UniqueDavis/Portfolio/blob/04afc30bbca15ec534702780fde16694d86b507c/Professional%20pic%20of%20me.jpg)
+![image]()
 
 Hi, I’m Unique Davis (she/her), an aspiring data scientist with a passion for uncovering insights through data. As a senior Data Science major at the University of North Carolina at Charlotte, I have hands-on experience with Python, Java, SQL, SAS, and Excel. My goal is to continuously expand my skills in a dynamic and collaborative environment. I thrive on solving problems, uncovering insights, and turning raw data into impactful stories. With a positive attitude and a love for teamwork, I’m excited to tackle real-world challenges and contribute to innovative, data-driven solutions.
 
