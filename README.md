@@ -11,4 +11,4 @@ Hi, I’m Unique Davis (she/her), an aspiring data scientist with a passion for 
 **Project 1: Heart Attack Preduction**
 ![image](docs/heart-attack-feel-like-800x600.png)
 
-[View Project]()
+[View Project](README.md)
