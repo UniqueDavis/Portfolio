@@ -3,62 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique Davis | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Unique Davis - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
             background-color: #f4f4f4;
-            color: #333;
         }
+
         .container {
+            display: flex;
             width: 80%;
             margin: auto;
-            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .left {
+            flex: 1;
+            padding: 40px;
             background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-        img {
-            max-width: 100px;
+
+        .left img {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #007bff;
         }
-        h1 {
-            color: #4CAF50;
+
+        .right {
+            flex: 1;
+            padding: 40px;
+            background: white;
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-        a {
-            color: #4CAF50;
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .projects {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projects li {
+            margin-bottom: 15px;
+        }
+
+        .projects a {
             text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .projects a img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="docs/Professional-pic-of-me.jpg" alt="Profile Picture">
-        <h1>Unique Davis</h1>
-        <p><strong>Aspiring Data Scientist</strong> | Python | SQL | Machine Learning</p>
-
-        <h2>About Me</h2>
-        <p>Hi, I’m Unique Davis (she/her). I love uncovering insights through data and solving real-world problems using Python, SQL, and Machine Learning.</p>
-
-        <h2>Projects</h2>
-        <div>
-            <h3>Heart Attack Prediction</h3>
-            <a href="Projects/heart-attack.html">
-                <img src="docs/heart-attack-feel-like-800x600.png" alt="Heart Attack Project">
-            </a>
-            <p>Predicting heart attack risks using machine learning.</p>
-            <a href="Projects/heart-attack.html">👉 View Project</a>
+        <!-- Left Side: About Me -->
+        <div class="left">
+            <img src="docs/Professional-pic-of-me.jpg" alt="Unique Davis">
+            <h1>About Me</h1>
+            <p>Hi, I’m Unique Davis (she/her), an aspiring data scientist with a passion for uncovering insights through data. 
+                As a senior Data Science major at UNC Charlotte, I thrive on solving problems, uncovering insights, and turning raw data into impactful stories.</p>
         </div>
 
-        <h2>📬 Get in Touch</h2>
-        <p>
-            📧 <a href="mailto:youremail@example.com">Email Me</a> <br>
-            💼 <a href="https://www.linkedin.com/in/uniquedavis">LinkedIn</a>
-        </p>
+        <!-- Right Side: Projects -->
+        <div class="right">
+            <h2>My Projects</h2>
+            <p>A glimpse of what I've been working on...</p>
+            <ul class="projects">
+                <li>
+                    <a href="Projects/heart-attack.html">
+                        <img src="docs/heart-attack-feel-like-800x600.png" alt="Heart Attack Prediction">
+                        Heart Attack Prediction
+                    </a>
+                </li>
+                <!-- Add more projects as needed -->
+            </ul>
+        </div>
     </div>
 
 </body>
