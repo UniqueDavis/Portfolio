@@ -7,11 +7,62 @@
 </head>
 <body>
   <h1>Heart Attack Prediction</h1>
-  <p>This is a data science project that predicts the likelihood of a heart attack based on patient data.</p>
   
-  <h2>Code:</h2>
-  <pre><code> # Python code for heart attack prediction </code></pre>
+  <h2>Introduction to the Problem</h2>
+  <p>
+    Using the “Heart Attack Risk Prediction Dataset,” the questions I want to solve are: 
+    <em>What are the key factors influencing heart attack risk in different age groups or genders?</em> 
+    Or how do lifestyle factors like exercise, alcohol consumption, and smoking influence the likelihood of a heart attack?
+  </p>
+  <p>
+    This can be beneficial to everyone because it can serve as a guide for personalized health advice to reduce heart attack risk across different age groups, genders, and lifestyles, while also pointing out things to avoid to reduce the risk. 
+  </p>
+  <p>
+    The problem here is that, since the dataset is synthetic, it may not accurately reflect real-world patterns or individual variations, which could lead to less reliable predictions when applied to actual populations. There’s also a risk of overrelying on these synthetic predictions, which could lead to misdiagnosis. As for what the dataset is missing, it doesn’t include race or ethnicity, which could be important for understanding variations in heart attack risk due to genetic or socio-economic factors. Also, other medical conditions that could influence heart attack risk aren’t included, which could also be significant contributing factors.
+  </p>
+  
+  <h2>Dataset Information</h2>
+  <p>The dataset contains 8764 rows, each representing an individual patient record, and 26 features. These features are important variables in determining the likelihood of a heart attack. The features include:</p>
+  <ul>
+    <li>Patient ID</li>
+    <li>Age</li>
+    <li>Sex</li>
+    <li>Cholesterol</li>
+    <li>Blood Pressure</li>
+    <li>Heart Rate</li>
+    <li>Diabetes</li>
+    <li>Family History</li>
+    <li>Smoking</li>
+    <li>Obesity</li>
+    <li>Alcohol Consumption</li>
+    <li>Exercise Hours per Week</li>
+    <li>Diet</li>
+    <li>Previous Heart Problems</li>
+    <li>Medication Use</li>
+    <li>Stress Level</li>
+    <li>Sedentary Hours per Day</li>
+    <li>Income</li>
+    <li>BMI</li>
+    <li>Triglycerides</li>
+    <li>Physical Activity Days per Week</li>
+    <li>Sleep Hours per Day</li>
+    <li>Country</li>
+    <li>Continent</li>
+    <li>Hemisphere</li>
+    <li>Heart Attack Risk</li>
+  </ul>
 
-  <!-- Include any other content you'd like here -->
+  <h2>Data Preprocessing</h2>
+  <p>
+    I first checked for duplicate rows, but there were none to remove. Then, I looked for any missing values, and there were zero missing values. So, the data is pretty clean and ready to go. After that, I applied scaling and normalization to get the dataset ready for further analysis.
+  </p>
+
+  <h2>Data Visualization: Storytelling</h2>
+  <p>This plot shows the number of people at high risk and no risk of heart attack, divided by their smoking status. The visualization clearly reveals that smokers are more likely to be at high risk for a heart attack compared to non-smokers.</p>
+  
+  <!-- You can add your actual plot image here by linking to it -->
+  <img src="docs/smoking-heart-attack-plot.png" alt="Smoking vs Heart Attack Risk Plot" />
+  
+  <!-- Feel free to add more sections or any interactive content you like -->
 </body>
 </html>
