@@ -5,57 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Davis - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <img src="docs/Professional-pic-of-me.jpg" alt="Unique Davis">
-                <h1>Unique Davis</h1>
-                <p>Aspiring Data Scientist</p>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <!-- Main Content -->
-        <main class="content">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    I’m an aspiring data scientist with a passion for uncovering insights through data.
-                    As a senior Data Science major at the University of North Carolina at Charlotte, I have hands-on experience with
-                    Python, Java, SQL, SAS, and Excel.
-                </p>
-            </section>
-            
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project-list">
-                    <div class="project">
-                        <img src="docs/heart-attack-feel-like-800x600.png" alt="Heart Attack Prediction">
-                        <h3>Heart Attack Prediction</h3>
-                        <p>Analyzing heart attack risk factors using data science.</p>
-                        <a href="Projects/heart-attack.html" class="btn">View Project</a>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your LinkedIn</a></p>
-                <p>GitHub: <a href="https://github.com/UniqueDavis" target="_blank">github.com/UniqueDavis</a></p>
-            </section>
-        </main>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <h1>Unique Davis</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Profile & About) -->
+    <header>
+        <div class="hero-text">
+            <h2>Hi, I'm Unique Davis</h2>
+            <p>Aspiring Data Scientist | Python, SQL, Java, SAS</p>
+            <p>Turning raw data into meaningful insights.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <div class="hero-img">
+            <img src="docs/Professional-pic-of-me.jpg" alt="Unique Davis">
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I’m an aspiring data scientist with a passion for uncovering insights through data.
+            As a senior Data Science major at the University of North Carolina at Charlotte, I have hands-on experience with
+            Python, Java, SQL, SAS, and Excel.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="docs/heart-attack-feel-like-800x600.png" alt="Heart Attack Prediction">
+            <h3>Heart Attack Prediction</h3>
+            <p>Analyzing heart attack risk factors using data science.</p>
+            <a href="Projects/heart-attack.html" class="btn">View Project</a>
+        </div>
+        <!-- Add more projects here -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/UniqueDavis" target="_blank">github.com/UniqueDavis</a></p>
+    </section>
 
     <script src="script.js"></script>
 </body>
