@@ -155,55 +155,8 @@
   <p>
     I first checked for duplicate rows, but there were none to remove. Then, I looked for any missing values, and there were zero missing values. So, the data is pretty clean and ready to go. After that, I applied scaling and normalization to get the dataset ready for further analysis.
   </p>
-<pre>
-        %pip install seaborn
-        %pip install scikit-learn
-        from sklearn.preprocessing import StandardScaler
-        import matplotlib.pyplot as plt
-        %matplotlib inline
-        import pandas as pd
-        import seaborn as sns
-        print('Setup Complete')
-    </pre>
-    <h2>Data Inspection and Cleaning</h2>
-    <pre>
-        # Loading the dataset
-        my_data = pd.read_csv(r'C:\path\to\your\data.csv')
-        print(my_data.head())
+<iframe src="file:///C:/Users/uniqu/Downloads/Coding%20Project%20Datasets/Heart%20Attack%20Prediction%20Synthetic%20Data/Heart%20Attack%20Risk%20Preditction-test.html" width="100%" height="600px"></iframe>
 
-        # Checking for missing values
-        missing_values = my_data.isnull().sum()
-        print(missing_values.sum())
-
-        # Checking for duplicates
-        duplicates = my_data.duplicated()
-        print(duplicates.sum())
-    </pre>
-    <h2>Data Visualization</h2>
-    <pre>
-        plt.figure(figsize=(12, 8))
-        for i, col in enumerate(numerical_columns, 1):
-            plt.subplot(3, 3, i)
-            sns.boxplot(data=my_data, x=col)
-            plt.title(f'Boxplot of {col}')
-        plt.tight_layout()
-        plt.show()
-    </pre>
-    <h2>Data Transformation</h2>
-    <pre>
-        my_data['Sex'] = my_data['Sex'].map({'Male': 1, 'Female': 0})  # Example mapping
-        # Repeat for other columns like Diabetes, Smoking, etc.
-    </pre>
-    <h2>Scaled Data</h2>
-    <pre>
-        # Scaling the data
-        from sklearn.preprocessing import StandardScaler
-        scaler = StandardScaler()
-        my_data[numerical_columns] = scaler.fit_transform(my_data[numerical_columns])
-        print(my_data.head())
-    </pre>
-</body>
-</html>
 
   <h2>Data Visualizations</h2>
   <p>
