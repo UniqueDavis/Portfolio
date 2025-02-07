@@ -36,34 +36,120 @@
   <h2>Dataset Information</h2>
   <p>The dataset contains 8764 rows, each representing an individual patient record, and 26 features. These features are important variables in determining the likelihood of a heart attack. The features include:</p>
 
-  <ul>
-    <li>Patient ID</li>
-    <li>Age</li>
-    <li>Sex</li>
-    <li>Cholesterol</li>
-    <li>Blood Pressure</li>
-    <li>Heart Rate</li>
-    <li>Diabetes</li>
-    <li>Family History</li>
-    <li>Smoking</li>
-    <li>Obesity</li>
-    <li>Alcohol Consumption</li>
-    <li>Exercise Hours per Week</li>
-    <li>Diet</li>
-    <li>Previous Heart Problems</li>
-    <li>Medication Use</li>
-    <li>Stress Level</li>
-    <li>Sedentary Hours per Day</li>
-    <li>Income</li>
-    <li>BMI</li>
-    <li>Triglycerides</li>
-    <li>Physical Activity Days per Week</li>
-    <li>Sleep Hours per Day</li>
-    <li>Country</li>
-    <li>Continent</li>
-    <li>Hemisphere</li>
-    <li>Heart Attack Risk</li>
-  </ul>
+  <table border="1">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient ID</td>
+      <td>A unique identifier for each patient.</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>The patient's age in years.</td>
+    </tr>
+    <tr>
+      <td>Sex</td>
+      <td>The gender of the patient (male/female).</td>
+    </tr>
+    <tr>
+      <td>Cholesterol</td>
+      <td>The level of cholesterol in the blood; high levels are a risk factor for heart disease.</td>
+    </tr>
+    <tr>
+      <td>Blood Pressure</td>
+      <td>The force of blood against the walls of arteries; high blood pressure is a heart disease risk.</td>
+    </tr>
+    <tr>
+      <td>Heart Rate</td>
+      <td>The number of heartbeats per minute.</td>
+    </tr>
+    <tr>
+      <td>Diabetes</td>
+      <td>Whether the patient has diabetes (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Family History</td>
+      <td>Whether the patient has a family history of heart disease (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Smoking</td>
+      <td>Whether the patient smokes (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Obesity</td>
+      <td>Whether the patient is considered obese based on BMI (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Alcohol Consumption</td>
+      <td>The amount of alcohol consumed regularly.</td>
+    </tr>
+    <tr>
+      <td>Exercise Hours per Week</td>
+      <td>The number of hours the patient exercises each week.</td>
+    </tr>
+    <tr>
+      <td>Diet</td>
+      <td>The patient's eating habits (healthy/unhealthy).</td>
+    </tr>
+    <tr>
+      <td>Previous Heart Problems</td>
+      <td>Whether the patient has had previous heart issues (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Medication Use</td>
+      <td>Whether the patient takes medication for heart-related issues (yes/no).</td>
+    </tr>
+    <tr>
+      <td>Stress Level</td>
+      <td>Self-reported stress level of the patient (low/medium/high).</td>
+    </tr>
+    <tr>
+      <td>Sedentary Hours per Day</td>
+      <td>The number of hours the patient spends sitting or doing sedentary activities each day.</td>
+    </tr>
+    <tr>
+      <td>Income</td>
+      <td>The income level of the patient (low/medium/high).</td>
+    </tr>
+    <tr>
+      <td>BMI</td>
+      <td>The Body Mass Index, a measure of body fat based on height and weight.</td>
+    </tr>
+    <tr>
+      <td>Triglycerides</td>
+      <td>A type of fat found in the blood; high triglyceride levels are a risk factor for heart disease.</td>
+    </tr>
+    <tr>
+      <td>Physical Activity Days per Week</td>
+      <td>The number of days per week the patient engages in physical activity.</td>
+    </tr>
+    <tr>
+      <td>Sleep Hours per Day</td>
+      <td>The number of hours the patient sleeps each night.</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>The country the patient is from.</td>
+    </tr>
+    <tr>
+      <td>Continent</td>
+      <td>The continent the patient resides in.</td>
+    </tr>
+    <tr>
+      <td>Hemisphere</td>
+      <td>The hemisphere the patient resides in (Northern/Southern).</td>
+    </tr>
+    <tr>
+      <td>Heart Attack Risk</td>
+      <td>The likelihood of the patient experiencing a heart attack, based on the dataset's analysis.</td>
+    </tr>
+  </tbody>
+</table>
   
   <h2>Data Preprocessing</h2>
   <p>
