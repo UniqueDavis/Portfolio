@@ -153,11 +153,10 @@
   
   <h2>Data Preprocessing</h2>
   <p>
-    I first checked for duplicate rows, but there were none to remove. Then, I looked for any missing values, and there were zero missing values. So, the data is pretty clean and ready to go. After that, I applied scaling and normalization to get the dataset ready for further analysis.
+    Several key steps were followed to prepare the dataset for analysis. First, I checked for any missing or duplicate data, and found that there were none. Next, the numerical columns were visualized using boxplots to check for outliers, 
+    but none were detected. Then, I transformed categorical variables like 'Sex', 'Diabetes', and 'Smoking' into numerical values, while splitting the 'Blood Pressure' column into 'Systolic' and 'Diastolic' values for better analysis. 
+    For example, 'Male' became 1 and 'Female' became 0. Finally, the data was scaled using StandardScaler to standardize the numerical values, ensuring that all features were on a comparable scale for improved data visualizations.
   </p>
-
-  <object data="file:///C:/Users/uniqu/Downloads/Coding%20Project%20Datasets/Heart%20Attack%20Prediction%20Synthetic%20Data/Heart%20Attack%20Risk%20Preditction-test.html" type="text/html" width="100%" height="600px"></object>
-
 
 
   <h2>Data Visualizations</h2>
