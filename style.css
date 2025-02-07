@@ -7,115 +7,87 @@ body {
     color: #333;
 }
 
-/* Container */
-.container {
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #001f3f; /* Navy Blue */
+    color: white;
+}
+nav ul {
+    list-style: none;
     display: flex;
 }
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: #001f3f;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
+nav ul li {
+    margin: 0 15px;
 }
-
-.profile {
-    text-align: center;
-}
-
-.profile img {
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.profile h1 {
-    font-size: 20px;
-    margin: 5px 0;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu ul li {
-    margin: 15px 0;
-}
-
-.menu ul li a {
+nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+/* Hero Section */
+header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #001f3f; /* Navy Blue */
+    color: white;
 }
-
-.menu ul li a i {
-    margin-right: 10px;
+.hero-text {
+    max-width: 50%;
 }
-
-/* Main Content */
-.content {
-    margin-left: 270px;
-    padding: 20px;
-    width: calc(100% - 270px);
+.hero-img img {
+    width: 300px;
+    border-radius: 50%;
 }
 
 /* About Section */
-#about, #projects, #contact {
+#about {
     padding: 50px;
-    background-color: white;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
-/* Projects */
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Projects Section */
+#projects {
+    padding: 50px;
+    background-color: #f4f4f4;
 }
-
-.project {
+.project-card {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
 }
-
-.project img {
+.project-card img {
     width: 100%;
     border-radius: 10px;
 }
-
-.project .btn {
+.project-card h3 {
+    margin: 10px 0;
+}
+.project-card .btn {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #0074D9;
+    background-color: #0074D9; /* Professional Blue */
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
 }
-
-.project .btn:hover {
+.project-card .btn:hover {
     background-color: #0056b3;
 }
 
 /* Contact Section */
 #contact {
+    padding: 50px;
+    background-color: #001f3f; /* Navy Blue */
+    color: white;
     text-align: center;
 }
-
 #contact a {
-    color: #FFD700;
-    text-decoration: none;
+    color: #FFD700; /* Gold Accent */
 }
