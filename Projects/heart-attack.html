@@ -153,8 +153,9 @@
   
   <h2>Data Preprocessing</h2>
   <p>
-    Several key steps were followed to prepare the dataset for analysis. First, I checked for any missing or duplicate data, and found that there were none. Next, the numerical columns I decided to use for data visualizations were shown using boxplots to check for outliers, 
-    but none were detected.
+    To prepare the dataset for analysis, I first inspected the data to see if anything stood out to me. I didn’t notice anything out of the ordinary that needed to be fixed or changed. I checked for missing or duplicate data 
+    and found that there were none. I dropped the "Patient ID" column because it wasn’t necessary for my analysis. Next, I used boxplots to check for outliers in the numerical columns I would be using for the visualizations 
+    I created, and none existed. These steps are important to ensure that the analysis isn’t distorted by missing data, duplicates, or outliers. The data seemed clean, so I moved on to creating the visualizations.
   </p>
   
   <img src="../docs/outputouliers.png" alt="" />
@@ -162,16 +163,16 @@
 
   <h2>Data Visualizations</h2>
   <p>
-    The first visualization shows how smoking status (smoker/non-smoker) correlates with heart attack risk, showing the count of smokers and non-smokers at risk and not at risk.
+    The first visualization (Heart Attack Risk Based on Smoking Status) shows how smoking status (smoker/non-smoker) correlates with heart attack risk, displaying the count of smokers and non-smokers categorized by risk (high or low).
   </p>
   <p>
-    The second visualization shows if smokers tend to have more extreme cholesterol values.
+    The second visualization (Cholesterol Levels: Smokers vs. Non-Smokers) illustrates the correlation between smoking status and cholesterol levels, showing the distribution of cholesterol levels for both smokers and non-smokers.
   </p>
   <p>
-    The third visualization shows how smoking correlates with other heart risk factors in a heatmap
+    The third visualization (Correlation Between Smoking and Other Heart Attack Risk Factors) presents how smoking correlates with other heart attack risk factors, as shown in the heatmap.
   </p>
   <p>
-    The fourth visualization shows how sedentary hours vary between low and high-risk groups.
+    The fourth visualization (Heart Attack Risk vs. Sedentary Hours Per Day) highlights the correlation between sedentary behavior and heart attack risk, comparing hours of inactivity in low-risk vs. high-risk groups.
   </p>
   
 <img src="../docs/outputsmoke.png" alt="Viz 1">
@@ -180,17 +181,23 @@
 <img src="../docs/outputkde.png" alt="Viz 4">
   
   <h2>Storytelling</h2>
-  
+  <p>
+    From these visualizations, I learned that non-smokers are at a significantly lower risk of heart attack compared to smokers. I also found that smokers have a wide range of cholesterol levels, suggesting they are likely 
+    to have both high and low cholesterol values. However, the data also shows that smokers typically have slightly higher cholesterol levels. Since smoking is associated with both higher cholesterol and an increased risk of 
+    heart attack, this leads me to believe that smoking may contribute to heart attacks, at least in part, through its effect on cholesterol levels. However, other factors, such as heart rate, BMI, and stress levels, also play 
+    a role. Additionally, I found that individuals who are inactive for longer periods (such as 12 or more hours per day) tend to be at a higher risk for heart disease. On the other hand, those who are very active are typically
+    considered low-risk. 
+  </p>
   <h2>Impact Section</h2>
   <p>
-    <!-- Add your impact content here -->
-    This project can have a significant impact on public health by providing insights into the factors contributing to heart attack risk. The knowledge generated could help guide future preventive measures and personalized health interventions.
+    This project could have a significant impact on public health by providing insights into how smoking and inactivity contribute to heart attack risk. Understanding that smoking raises cholesterol levels and heart attack 
+    risk could motivate individuals to quit smoking. However, because the data used is synthetic and does not account for many other important factors (such as diet, genetics, or medical history), it does not fully capture 
+    the complexity of heart attack risk. While the findings related to smoking and sedentary behavior are clear, more comprehensive data would be needed for a better understanding.
   </p>
-  <h2>Code</h2>
+  <h2>My Code</h2>
   <!-- I used https://nbviewer.jupyter.org/ -->
   <a href="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/HeartAttackRiskPreditction.ipynb" target="_blank">View Source Code</a>
-
-
+  
   <h2>References</h2>
   <ul>
     <li>
