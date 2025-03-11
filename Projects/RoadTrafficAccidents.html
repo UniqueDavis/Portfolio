@@ -111,8 +111,6 @@
   </p>
 
   <h2>Data Visualizations</h2>
-  <img src="../docs/Age dist.png" alt="Viz 1">  <img src="../docs/driving dist.png" alt="Viz 2">
-  
 <p>
     I plotted pie charts and histograms to visualize the distribution of drivers' age bands and their driving experience. The plots relate to our modeling because by observing the distribution of experience and ages, it can show us whether certain levels of experience and ages are more prone to accidents, which could help inform accident severity predictions in the Random Forest model.
 </p>
@@ -126,55 +124,75 @@
     </li>
 </ul>
  
-<img src="../docs/Age dist.png" alt="Viz 1">
-<img src="../docs/driving dist.png" alt="Viz 2">
+<img src="../docs/Age dist.png" alt="Viz 1">  <img src="../docs/driving dist.png" alt="Viz 2">
 
   <h2>Modeling</h2>
-   <p>
-    I will be using a Random Forest model. Random Forest builds several decision trees and combines their results to improve accuracy and reduce overfitting. It handles imbalanced datasets well, is robust against missing data, and isn't heavily affected by outliers. However, 
-    it can be computationally intensive and harder to interpret. I chose both of these models because I thought they'd work best for my dataset, which is mostly categorical. Random Forest can best answer my question, 
-    "What factors contribute most to severe accidents?" because it gives me feature importance, helping pinpoint which factors matter most when it comes to severity.
-  </p>
-<img src="../docs/Screenshot (1).png" alt="Viz 5">
-<img src="../docs/output.png" alt="Viz 4">
+<p>
+    For this analysis, I will be using a Random Forest model. Random Forest is an ensemble learning method that builds multiple decision trees during training and combines their results to improve prediction accuracy and reduce overfitting. This approach makes it highly effective for handling imbalanced datasets, as it can balance the influence of less-represented classes. Additionally, it is robust against missing data and not heavily affected by outliers, making it a versatile choice for real-world datasets. 
+</p>
+<p>
+    However, Random Forest models can be computationally intensive and their results are harder to interpret compared to simpler models like linear regression. Despite this, I chose Random Forest because it works well with my dataset, which is mostly categorical. Random Forest also provides feature importance scores, which will help me answer the key question of "What factors contribute most to severe accidents?" By analyzing these feature importance scores, I can pinpoint the factors that have the greatest impact on accident severity, providing valuable insights for model refinement and decision-making.
+</p>
   
   <h2>Evaluation</h2>
-   <p>
-    To evaluate the performance of the Random Forest model, I used the following metrics:
+  <img src="../docs/Screenshot (1).png" alt="Viz 5"> <img src="../docs/output.png" alt="Viz 4">
+   
+<p>
+    To evaluate the performance of the Random Forest model, I used several metrics to provide a comprehensive assessment of its effectiveness:
 
-1. Accuracy Score
-Accuracy measures the percentage of correct predictions out of all predictions made. It is a common evaluation metric for classification problems but may not be reliable in imbalanced datasets (as is the case here, with different levels of severity in accident data).
+    <ol>
+        <li>
+            <strong>Accuracy Score</strong><br>
+            Accuracy measures the percentage of correct predictions out of all predictions made. It is a common evaluation metric for classification problems; however, it can be less reliable in the case of imbalanced datasets, such as ours. Since the dataset involves varying levels of accident severity, accuracy might not give a complete picture of how well the model is performing across all severity classes.
+        </li>
+        <li>
+            <strong>Classification Report</strong><br>
+            The classification report provides key metrics such as precision, recall, and F1-score for each class (in this case, the severity levels of accidents). Here's a breakdown of each metric:
+            <ul>
+                <li><strong>Precision:</strong> This measures the accuracy of positive predictions. It indicates how many of the predicted severe accidents are actually severe.</li>
+                <li><strong>Recall:</strong> This measures the model's ability to identify all relevant instances of a specific class. It tells us how well the model detects severe accidents (or any other class).</li>
+                <li><strong>F1-score:</strong> The F1-score is the harmonic mean of precision and recall, providing a balance between the two. It is especially useful when we need to balance the importance of both false positives and false negatives, as in accident severity classification where both underpredicting and overpredicting severity can have significant consequences.</li>
+            </ul>
+            These metrics are particularly useful for imbalanced classes, such as accident severity, where certain classes (e.g., severe accidents) may be underrepresented, and traditional accuracy may not fully capture the model's effectiveness.
+        </li>
+        <li>
+            <strong>Confusion Matrix</strong><br>
+            The confusion matrix visualizes the true positives, true negatives, false positives, and false negatives of the model’s predictions. By examining the matrix, we can understand how well the model is performing across different severity levels. It helps identify which classes are being misclassified more often and provides insight into whether the model struggles with certain severity levels (for example, overpredicting minor accidents while missing severe ones).
+        </li>
+    </ol>
+</p>
 
-2. Classification Report
-The classification report provides precision, recall, and F1-score for each class (severity levels in the dataset).
-
-Precision measures the accuracy of positive predictions.
-Recall measures the ability of the model to find all relevant instances (how well it detects a specific class).
-F1-score is the harmonic mean of precision and recall, providing a balance between the two.
-These metrics are particularly useful in cases with imbalanced classes, like accident severity, where certain classes (e.g., severe accidents) might be underrepresented.
-
-3. Confusion Matrix
-The confusion matrix helps visualize the true positives, true negatives, false positives, and false negatives. This allows us to understand how well the model performs across different severity levels and whether it tends to misclassify certain classes.
-  </p>
   <h2>Storytelling</h2>
-  <p>
-    The modeling process helped answer several important questions about the dataset. For example, we were able to predict Accident Severity with a reasonable degree of accuracy (approximately 83%) based on driver characteristics, road conditions, and accident specifics. This suggests that certain features in the dataset, such as Age_band_of_driver and Driving_experience, provide strong signals for predicting accident severity.
+<p>
+    The modeling process provided valuable insights into the dataset and helped answer several important questions. For instance, we were able to predict Accident Severity with a reasonable degree of accuracy—approximately 83%—based on driver characteristics, road conditions, and accident specifics. This suggests that certain features in the dataset, such as <strong>Age_band_of_driver</strong> and <strong>Driving_experience</strong>, are strong predictors of accident severity.
+</p>
+<p>
+    However, a closer look at the classification report reveals a significant discrepancy in the model’s performance across different classes. Severe accidents (represented by class 2) are predicted with much higher accuracy compared to minor accidents (class 1). This discrepancy highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented. As a result, the model may struggle to generalize well across all classes, particularly for minor accidents, which are underrepresented in the dataset.
+</p>
+<p>
+    This observation suggests that additional techniques, such as resampling, synthetic data generation, or adjusting class weights, could help address the class imbalance and improve the model’s performance across all accident severity levels.
+</p>
 
-However, the classification report shows a significant discrepancy between the model’s performance on different classes, with severe accidents (represented by class 2) being predicted with much higher accuracy compared to minor accidents (class 1). This highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented, impacting the model's ability to generalize across all classes.
-  </p>
   <h2>Impact Section</h2>
-  <p>
-    The impact of this project can be observed in several areas:
+<h2>Impact</h2>
+<p>
+    The impact of this project can be observed in several key areas:
+</p>
 
-Social Impact:
-By predicting accident severity more accurately, we can contribute to a better understanding of traffic accidents, leading to improved safety measures. If the model is deployed in real-world scenarios (e.g., insurance companies, traffic management systems), it could help predict the severity of accidents in real-time, allowing for quicker responses to severe accidents.
+<h3>Social Impact</h3>
+<p>
+    By predicting accident severity more accurately, this model can contribute to a better understanding of traffic accidents, potentially leading to improved safety measures. If deployed in real-world scenarios (e.g., by insurance companies or traffic management systems), the model could help predict the severity of accidents in real-time, allowing for quicker, more efficient responses to severe accidents and potentially saving lives.
+</p>
 
-Ethical Considerations:
-There is a risk that the model could perpetuate or exacerbate biases, particularly if the dataset underrepresents certain demographic groups (e.g., gender or age). For example, if young drivers are overrepresented in the dataset, the model might incorrectly associate younger drivers with higher accident severity, potentially leading to biased insurance premiums or unfair treatment in safety initiatives.
+<h3>Ethical Considerations</h3>
+<p>
+    There is a risk that the model could perpetuate or exacerbate biases, particularly if the dataset underrepresents certain demographic groups (e.g., gender, age). For example, if younger drivers are overrepresented in the dataset, the model might incorrectly associate younger drivers with higher accident severity. This could result in biased outcomes, such as higher insurance premiums for young drivers or unfair treatment in safety initiatives and policy decisions.
+</p>
 
-Negative Impact:
-While the model aims to improve safety and risk prediction, it could inadvertently lead to unfair consequences if deployed without proper oversight. For example, the model's predictions might influence policy or decision-making in ways that disproportionately impact certain groups, such as young drivers, by increasing insurance rates or limiting access to safer driving environments.
-  </p>
+<h3>Negative Impact</h3>
+<p>
+    While the goal of the model is to improve safety and risk prediction, it could inadvertently lead to unfair consequences if deployed without proper oversight. For example, the model's predictions might influence policy or decision-making in ways that disproportionately affect certain groups, such as young drivers, by increasing their insurance rates or limiting their access to safer driving environments. It is crucial that such models are used responsibly and with consideration of their potential social implications.
+</p>
   <h2>My Code</h2>
    <!-- I used https://nbviewer.jupyter.org/ -->
   
