@@ -107,7 +107,7 @@
   <p>
   The dataset I am using is a pre-cleaned version from Kaggle, which I selected after evaluating both the raw and cleaned datasets to ensure the preprocessing was consistent and effective. While inspecting the data 
   using functions like .shape, .columns, and .head(), I noticed that the cleaned version removed columns with missing values (NaN or NA), a time-related column, and other less relevant features. This reduced the 
-  original 32 columns to 15, making the dataset more concise for analysis while preserving key information.
+  original 32 columns to 15, making the dataset more concise for analysis while preserving key information. Lastly, I checked for duplicates to ensure everything looked good, and I found 390 duplicates, which I deleted.
   </p>
 
   <h2>Data Visualizations</h2>
@@ -167,7 +167,7 @@
     The modeling process provided valuable insights into the dataset and helped answer several important questions. For instance, we were able to predict Accident Severity with a reasonable degree of accuracy—approximately 83%—based on driver characteristics, road conditions, and accident specifics. This suggests that certain features in the dataset, such as Age_band_of_driver and Driving_experience, are strong predictors of accident severity.
 </p>
 <p>
-    However, a closer look at the classification report reveals a significant discrepancy in the model’s performance across different classes. Severe accidents (represented by class 2) are predicted with much higher accuracy compared to minor accidents (class 1). This discrepancy highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented. As a result, the model may struggle to generalize well across all classes, particularly for minor accidents.
+    However, a closer look at the classification report reveals a significant discrepancy in the model’s performance across different classes. Severe accidents (represented by class 2) are predicted with much higher accuracy compared to minor accidents (represented by class 1). This discrepancy highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented. As a result, the model may struggle to generalize well across all classes, particularly for minor accidents.
 </p>
 <p>
     This observation suggests that additional techniques like resampling or adjusting class weights could help address the class imbalance and improve the model’s performance across all accident severity levels.
