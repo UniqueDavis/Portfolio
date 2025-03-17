@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Traffic Accident Severity Classification Project</title>
+</head>
+<body>
+  <h1>Project Three: Road Traffic Accident Severity Classification</h1>
+  
+  <h2>The Problem</h2>
+  <p>
+  Road traffic accidents are a serious global issue, contributing to high injury and fatality rates worldwide. According to the World Health Organization (WHO), "Every year, the lives of approximately 1.19 million people 
+  are cut short as a result of a road traffic crashs." While improvements in road safety measures and vehicle technology have helped reduce risks, understanding the key factors that contribute to accident severity is crucial 
+  for prevention and policy-making. By analyzing accident data, we can identify patterns and risk factors that could lead to safer roads and fewer fatalities.
+  <p>
+    Using the 
+    <a href="https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents" target="_blank">
+      Road Traffic Accidents Dataset
+    </a>, this project aims to answer:
+  </p>
+  <ul>
+    <li>What factors most significantly influence the severity of traffic accidents, and how can they be used to predict accident outcomes?</li> 
+    <!--<li>How does driving experience influence accident severity?</li> -->
+  </ul>
+  </p>
+  <p>
+    This project aims to explore meaningful patterns in road traffic accidents and contribute to a deeper understanding of how various factors influence accident severity.
+  </p>
+  
+  <h2>Dataset Information</h2>
+  <p>The dataset contains 12316 rows, each representing instances of an accident, and 15 features. These features are important variables in determining the risk and severity of road traffic accidents. The features include:</p>
 
+ <table border="1">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Age_band_of_driver</td>
+      <td>The age group of the driver involved in the accident.</td>
+    </tr>
+    <tr>
+      <td>Sex_of_driver</td>
+      <td>The gender of the driver.</td>
+    </tr>
+    <tr>
+      <td>Educational_level</td>
+      <td>The education level of the driver.</td>
+    </tr>
+    <tr>
+      <td>Vehicle_driver_relation</td>
+      <td>The relationship between the driver and the vehicle.</td>
+    </tr>
+    <tr>
+      <td>Driving_experience</td>
+      <td>The number of years the driver has been driving.</td>
+    </tr>
+    <tr>
+      <td>Lanes_or_Medians</td>
+      <td>The type of lanes or medians present on the road where the accident occurred.</td>
+    </tr>
+    <tr>
+      <td>Types_of_Junction</td>
+      <td>The type of road junction where the accident took place.</td>
+    </tr>
+    <tr>
+      <td>Road_surface_type</td>
+      <td>The type of road surface at the accident location.</td>
+    </tr>
+    <tr>
+      <td>Light_conditions</td>
+      <td>The lighting conditions at the time of the accident.</td>
+    </tr>
+    <tr>
+      <td>Weather_conditions</td>
+      <td>The weather conditions at the time of the accident.</td>
+    </tr>
+    <tr>
+      <td>Type_of_collision</td>
+      <td>The nature of the collision.</td>
+    </tr>
+    <tr>
+      <td>Vehicle_movement</td>
+      <td>The movement of the vehicle at the time of the accident.</td>
+    </tr>
+    <tr>
+      <td>Pedestrian_movement</td>
+      <td>The movement of pedestrians involved in the accident.</td>
+    </tr>
+    <tr>
+      <td>Cause_of_accident</td>
+      <td>The reported cause of the accident.</td>
+    </tr>
+    <tr>
+      <td>Accident_severity</td>
+      <td>The severity of the accident.</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Data Preprocessing</h2>
+
+  <p>
+  The dataset I am using is a pre-cleaned version from Kaggle, which I selected after evaluating both the raw and cleaned datasets to ensure the preprocessing was consistent and effective. While inspecting the data 
+  using functions like .shape, .columns, and .head(), I noticed that the cleaned version removed columns with missing values (NaN or NA), a time-related column, and other less relevant features. This reduced the 
+  original 32 columns to 15, making the dataset more concise for analysis while preserving key information. Lastly, I checked for duplicates to ensure everything looked good, and I found 390 duplicates, which I deleted.
+  </p>
+
+  <h2>Data Visualizations</h2>
+<p>
+    I plotted a pie chart and histogram to visualize the distribution of drivers' age bands and their driving experience. The plots relate to our modeling because by observing the distribution of experience and ages, it can show us whether certain levels of experience and ages are more prone to accidents, which could help inform accident severity predictions in the Random Forest model.
+</p>
+
+<ul>
+    <li>
+        The pie chart shows the proportion of drivers within different age bands involved in accidents. This provides us with a good understanding of which age groups are most common in the dataset. The chart shows that the age group 18-30 is the most frequent in traffic accidents, which could be a useful feature for building predictive models.
+    </li>
+    <li>
+        The histogram shows us how many years of driving experience are distributed among the drivers in the dataset. This visualization helps us understand the frequency of drivers with varying levels of experience, from less than one year to more than ten years of experience. It also gives an insight into the skewness of the data, as the distribution might indicate whether the dataset has a higher concentration of novice or experienced drivers.
+    </li>
+</ul>
+ 
+<img src="../docs/Age dist.png" alt="Viz 1">
+<img src="../docs/driving dist.png" alt="Viz 2">
+
+  <h2>Modeling</h2>
+<p>
+    For this analysis, I will be using a Random Forest model. Random Forest is an ensemble learning method that builds multiple decision trees during training and combines their results to improve prediction accuracy and reduce overfitting. This approach makes it highly effective for handling imbalanced datasets, as it can balance the influence of less-represented classes. Additionally, it is robust against missing data and not heavily affected by outliers, making it a versatile choice for real-world datasets. 
+</p>
+<p>
+    However, Random Forest models can be computationally intensive and their results are harder to interpret compared to simpler models like linear regression. Despite this, I chose Random Forest because it works well with my dataset, which is mostly categorical. Random Forest also provides feature importance scores and by analyzing these feature importance scores, I can pinpoint the factors that have the greatest impact on accident severity, providing valuable insights for model refinement and decision-making.
+</p>
+  
+  <h2>Evaluation</h2>
+   
+<p>
+    To evaluate the performance of the Random Forest model, I used several metrics to assess its effectiveness:
+
+    <ol>
+        <li>
+            <strong>Accuracy Score</strong><br>
+            Accuracy measures the percentage of correct predictions out of all predictions made. It is a common evaluation metric for classification problems; however, it can be less reliable in the case of imbalanced datasets, such as ours. Since the dataset involves varying levels of accident severity, accuracy might not give a complete picture of how well the model is performing across all severity classes.
+        </li>
+        <li>
+            <strong>Classification Report</strong><br>
+            The classification report provides key metrics such as precision, recall, and F1-score for each class.
+            <ul>
+                <li><strong>Precision:</strong> measures the accuracy of positive predictions. It indicates how many of the predicted severe accidents are actually severe.</li>
+                <li><strong>Recall:</strong> measures the model's ability to identify all relevant instances of a specific class. It tells us how well the model detects severe accidents (or any other class).</li>
+                <li><strong>F1-score:</strong> combines the mean of precision and recall into one number. It is useful when we need to balance the importance of both false positives and false negatives.</li>
+            </ul>
+            These metrics are particularly useful for imbalanced classes, such as accident severity, where certain classes may be underrepresented, and traditional accuracy may not fully capture the model's effectiveness.
+        </li>
+        <li>
+            <strong>Confusion Matrix</strong><br>
+            The confusion matrix visualizes the true positives, true negatives, false positives, and false negatives of the model’s predictions. By examining the matrix, we can understand how well the model is performing across different severity levels. It helps identify which classes are being misclassified more often and provides insight into whether the model struggles with certain severity levels.
+        </li>
+    </ol>
+</p>
+<img src="../docs/Screenshot (1).png" alt="Viz 5"> <img src="../docs/output.png" alt="Viz 4">
+  <h2>Storytelling</h2>
+<p>
+    The modeling process provided valuable insights into the dataset and helped answer several important questions. For instance, we were able to predict Accident Severity with a reasonable degree of accuracy—approximately 83%—based on driver characteristics, road conditions, and accident specifics. This suggests that certain features in the dataset, such as Age_band_of_driver and Driving_experience, are strong predictors of accident severity.
+</p>
+<p>
+    However, a closer look at the classification report reveals a significant discrepancy in the model’s performance across different classes. Severe accidents (represented by class 2) are predicted with much higher accuracy compared to minor accidents (represented by class 1). This discrepancy highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented. As a result, the model may struggle to generalize well across all classes, particularly for minor accidents.
+</p>
+<p>
+    This observation suggests that additional techniques like resampling or adjusting class weights could help address the class imbalance and improve the model’s performance across all accident severity levels.
+</p>
+
+  <h2>Impact Section</h2>
+<p>
+    By predicting accident severity more accurately, this model can contribute to a better understanding of traffic accidents, potentially leading to improved safety measures. If deployed in real-world scenarios by like insurance companies or traffic management systems, the model could help predict the severity of accidents in real-time, allowing for quicker, more efficient responses to severe accidents and potentially saving lives.
+</p>
+<p>
+    However, there is a risk that the model could contribute to biases, particularly if the dataset underrepresents certain demographic groups. For example, if younger drivers are overrepresented in the dataset, the model might incorrectly associate younger drivers with higher accident severity. This could result in biased outcomes, such as higher insurance for young drivers.
+</p> 
+  
+  <h2>My Code</h2>
+   <!-- I used https://nbviewer.jupyter.org/ -->
+  
+  <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/RoadAccidentss.ipynb" width="100%" height="600px"></iframe>
+  
+  <h2>References</h2>
+  <ul>
+    <li>
+      <a href="https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents" target="_blank">
+        Road Traffic Accidents Dataset - Kaggle
+      </a>
+    </li>
+    <li>
+      <a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries" target="_blank">
+        Road traffic injuries - World Health Organization (WHO)
+      </a>
+    </li>
+    <li>
+      <a href="https://chatgpt.com/" target="_blank">
+        ChatGPT - OpenAI 
+      </a>
+      <em> (ChatGPT helped with debugging and coding concepts; all final work is my own.)</em>
+    </li>
+  </ul>
+
+</body>
+</html>
