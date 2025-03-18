@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Road Traffic Accident Severity Classification Project</title>
+  <title>World Happiness Regression Project</title>
 </head>
 <body>
-  <h1>Project Three: Road Traffic Accident Severity Classification</h1>
+  <h1>Project Three: World Happiness Regression </h1>
   
   <h2>The Problem</h2>
   <p>
@@ -15,7 +15,7 @@
   for prevention and policy-making. By analyzing accident data, we can identify patterns and risk factors that could lead to safer roads and fewer fatalities.
   <p>
     Using the 
-    <a href="https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents" target="_blank">
+    <a href="https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated" target="_blank">
       Road Traffic Accidents Dataset
     </a>, this project aims to answer:
   </p>
@@ -102,17 +102,15 @@
   </tbody>
 </table>
 
-  <h2>Data Preprocessing</h2>
+  <h2>What is regression and how does it work?</h2>
 
   <p>
-  The dataset I am using is a pre-cleaned version from Kaggle, which I selected after evaluating both the raw and cleaned datasets to ensure the preprocessing was consistent and effective. While inspecting the data 
-  using functions like .shape, .columns, and .head(), I noticed that the cleaned version removed columns with missing values (NaN or NA), a time-related column, and other less relevant features. This reduced the 
-  original 32 columns to 15, making the dataset more concise for analysis while preserving key information. Lastly, I checked for duplicates to ensure everything looked good, and I found 390 duplicates, which I deleted.
+  Th
   </p>
 
-  <h2>Data Visualizations</h2>
+  <h2>Experiment 1: Data understanding</h2>
 <p>
-    I plotted a pie chart and histogram to visualize the distribution of drivers' age bands and their driving experience. The plots relate to our modeling because by observing the distribution of experience and ages, it can show us whether certain levels of experience and ages are more prone to accidents, which could help inform accident severity predictions in the Random Forest model.
+    I 
 </p>
 
 <ul>
@@ -127,15 +125,16 @@
 <img src="../docs/Age dist.png" alt="Viz 1">
 <img src="../docs/driving dist.png" alt="Viz 2">
 
-  <h2>Modeling</h2>
+  <h2>Experiment 1: Modeling</h2>
 <p>
     For this analysis, I will be using a Random Forest model. Random Forest is an ensemble learning method that builds multiple decision trees during training and combines their results to improve prediction accuracy and reduce overfitting. This approach makes it highly effective for handling imbalanced datasets, as it can balance the influence of less-represented classes. Additionally, it is robust against missing data and not heavily affected by outliers, making it a versatile choice for real-world datasets. 
 </p>
 <p>
     However, Random Forest models can be computationally intensive and their results are harder to interpret compared to simpler models like linear regression. Despite this, I chose Random Forest because it works well with my dataset, which is mostly categorical. Random Forest also provides feature importance scores and by analyzing these feature importance scores, I can pinpoint the factors that have the greatest impact on accident severity, providing valuable insights for model refinement and decision-making.
 </p>
+  <h2>Experiment 1: Pre-processing</h2>
   
-  <h2>Evaluation</h2>
+  <h2>Experiment 1: Evaluation</h2>
    
 <p>
     To evaluate the performance of the Random Forest model, I used several metrics to assess its effectiveness:
@@ -184,18 +183,18 @@
   <h2>My Code</h2>
    <!-- I used https://nbviewer.jupyter.org/ -->
   
-  <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/RoadAccidentss.ipynb" width="100%" height="600px"></iframe>
+  <iframe src="" width="100%" height="600px"></iframe>
   
   <h2>References</h2>
   <ul>
     <li>
-      <a href="https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents" target="_blank">
-        Road Traffic Accidents Dataset - Kaggle
+      <a href="https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated" target="_blank">
+        World Happiness Report (2024) - Kaggle
       </a>
     </li>
     <li>
-      <a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries" target="_blank">
-        Road traffic injuries - World Health Organization (WHO)
+      <a href="" target="_blank">
+        Words
       </a>
     </li>
     <li>
