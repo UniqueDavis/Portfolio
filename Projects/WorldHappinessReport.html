@@ -10,13 +10,11 @@
   
   <h2>The Problem</h2>
   <p>
-  Road traffic accidents are a serious global issue, contributing to high injury and fatality rates worldwide. According to the World Health Organization (WHO), "Every year, the lives of approximately 1.19 million people 
-  are cut short as a result of a road traffic crashs." While improvements in road safety measures and vehicle technology have helped reduce risks, understanding the key factors that contribute to accident severity is crucial 
-  for prevention and policy-making. By analyzing accident data, we can identify patterns and risk factors that could lead to safer roads and fewer fatalities.
+  Ro
   <p>
     Using the 
     <a href="https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated" target="_blank">
-      Road Traffic Accidents Dataset
+      World Happiness Report (2024) Dataset
     </a>, this project aims to answer:
   </p>
   <ul>
@@ -103,7 +101,6 @@
 </table>
 
   <h2>What is regression and how does it work?</h2>
-
   <p>
   Th
   </p>
@@ -113,29 +110,21 @@
     I 
 </p>
 
-<ul>
-    <li>
-        The pie chart shows the proportion of drivers within different age bands involved in accidents. This provides us with a good understanding of which age groups are most common in the dataset. The chart shows that the age group 18-30 is the most frequent in traffic accidents, which could be a useful feature for building predictive models.
-    </li>
-    <li>
-        The histogram shows us how many years of driving experience are distributed among the drivers in the dataset. This visualization helps us understand the frequency of drivers with varying levels of experience, from less than one year to more than ten years of experience. It also gives an insight into the skewness of the data, as the distribution might indicate whether the dataset has a higher concentration of novice or experienced drivers.
-    </li>
-</ul>
- 
-<img src="../docs/Age dist.png" alt="Viz 1">
-<img src="../docs/driving dist.png" alt="Viz 2">
-
   <h2>Experiment 1: Modeling</h2>
 <p>
-    For this analysis, I will be using a Random Forest model. Random Forest is an ensemble learning method that builds multiple decision trees during training and combines their results to improve prediction accuracy and reduce overfitting. This approach makes it highly effective for handling imbalanced datasets, as it can balance the influence of less-represented classes. Additionally, it is robust against missing data and not heavily affected by outliers, making it a versatile choice for real-world datasets. 
+    Fo 
 </p>
 <p>
-    However, Random Forest models can be computationally intensive and their results are harder to interpret compared to simpler models like linear regression. Despite this, I chose Random Forest because it works well with my dataset, which is mostly categorical. Random Forest also provides feature importance scores and by analyzing these feature importance scores, I can pinpoint the factors that have the greatest impact on accident severity, providing valuable insights for model refinement and decision-making.
+    Ho
 </p>
   <h2>Experiment 1: Pre-processing</h2>
-  
+<p>
+    Fo 
+</p>
+<p>
+    Ho
+</p>
   <h2>Experiment 1: Evaluation</h2>
-   
 <p>
     To evaluate the performance of the Random Forest model, I used several metrics to assess its effectiveness:
 
@@ -160,29 +149,43 @@
         </li>
     </ol>
 </p>
-<img src="../docs/Screenshot (1).png" alt="Viz 5"> <img src="../docs/output.png" alt="Viz 4">
+<img src="" alt="Viz 5"> <img src="../docs/output.png" alt="Viz 4">
   <h2>Storytelling</h2>
 <p>
-    The modeling process provided valuable insights into the dataset and helped answer several important questions. For instance, we were able to predict Accident Severity with a reasonable degree of accuracy—approximately 83%—based on driver characteristics, road conditions, and accident specifics. This suggests that certain features in the dataset, such as Age_band_of_driver and Driving_experience, are strong predictors of accident severity.
-</p>
-<p>
-    However, a closer look at the classification report reveals a significant discrepancy in the model’s performance across different classes. Severe accidents (represented by class 2) are predicted with much higher accuracy compared to minor accidents (represented by class 1). This discrepancy highlights a potential class imbalance in the dataset, where certain severity levels are underrepresented. As a result, the model may struggle to generalize well across all classes, particularly for minor accidents.
-</p>
-<p>
-    This observation suggests that additional techniques like resampling or adjusting class weights could help address the class imbalance and improve the model’s performance across all accident severity levels.
+    Th
 </p>
 
-  <h2>Impact Section</h2>
-<p>
-    By predicting accident severity more accurately, this model can contribute to a better understanding of traffic accidents, potentially leading to improved safety measures. If deployed in real-world scenarios by like insurance companies or traffic management systems, the model could help predict the severity of accidents in real-time, allowing for quicker, more efficient responses to severe accidents and potentially saving lives.
+  <h2>Experiment 2</h2>
+  <p>
+    Fo 
 </p>
 <p>
-    However, there is a risk that the model could contribute to biases, particularly if the dataset underrepresents certain demographic groups. For example, if younger drivers are overrepresented in the dataset, the model might incorrectly associate younger drivers with higher accident severity. This could result in biased outcomes, such as higher insurance for young drivers.
-</p> 
+    Ho
+</p>
+  <h2>Experiment 3</h2>
+  <p>
+    Fo 
+</p>
+<p>
+    Ho
+</p>
+  <h2>Impact Section</h2>
+  <p>
+    Fo 
+</p>
+<p>
+    Ho
+</p>
+  <h2>Conclusion</h2>
+  <p>
+    Fo 
+</p>
+<p>
+    Ho
+</p>
   
   <h2>My Code</h2>
    <!-- I used https://nbviewer.jupyter.org/ -->
-  
   <iframe src="" width="100%" height="600px"></iframe>
   
   <h2>References</h2>
