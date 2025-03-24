@@ -71,54 +71,43 @@
 
   <h2>What is regression and how does it work?</h2>
   <p>
-  Th
+  Regression in machine learning refers to a supervised learning technique where the goal is to predict a continuous numerical value based on one or more independent features. It finds relationships between variables so that predictions can be made. There are many types of regression such as simple linear regression, multiple linear regression, and support vector regression.
   </p>
 
   <h2>Experiment 1: Data understanding</h2>
 <p>
-    I 
+    To begin the analysis, I first explored the dataset for any patterns, correlations, and distributions. I made a pairplot to visualize the relationships between all of the features. From this I noticed that Number_of_Customers_Per_Day and Average_Order_Value had a strong corelation with Daily_Revenue. For Marketing_Spend_Per_Day and Location_Foot_Traffic there was only a faint amount of correlation with Daily_Revenue. Then for Operating_Hours_Per_Day and Number_of_Employees
+   theres no corelation with Daily_Revenue
+</p>
+<img src="docs/CoffeeDE.png" alt="Viz 1">
+
+  <h2>Experiment 1: Pre-processing</h2>
+<p>
+    Before applying the model, I first checked the dataset for missing values and duplicates. This is an important step because any missing data or duplicate records could skew the results of the regression model. I used basic data exploration methods like isnull() to identify missing values and duplicated() to check for any duplicate rows.
+  Since the dataset did not contain any missing values or duplicates, I began modeling without needing to clean the data further.
 </p>
 
   <h2>Experiment 1: Modeling</h2>
 <p>
-    Fo 
+    For the first experiment, I built a linear regression model to predict the coffee shop's performance based on the available features. The model was implemented using the LinearRegression class from the scikit-learn library in Python. I split the dataset into training and testing sets, training the model on the training data, and using it to predict on the testing data.
 </p>
-<p>
-    Ho
-</p>
-  <h2>Experiment 1: Pre-processing</h2>
-<p>
-    Fo 
-</p>
-<p>
-    Ho
-</p>
+  
   <h2>Experiment 1: Evaluation</h2>
 <p>
-    To evaluate the performance of the Random Forest model, I used several metrics to assess its effectiveness:
-
-    <ol>
-        <li>
-            <strong>Accuracy Score</strong><br>
-            Accuracy measures the percentage of correct predictions out of all predictions made. It is a common evaluation metric for classification problems; however, it can be less reliable in the case of imbalanced datasets, such as ours. Since the dataset involves varying levels of accident severity, accuracy might not give a complete picture of how well the model is performing across all severity classes.
-        </li>
-        <li>
-            <strong>Classification Report</strong><br>
-            The classification report provides key metrics such as precision, recall, and F1-score for each class.
-            <ul>
-                <li><strong>Precision:</strong> measures the accuracy of positive predictions. It indicates how many of the predicted severe accidents are actually severe.</li>
-                <li><strong>Recall:</strong> measures the model's ability to identify all relevant instances of a specific class. It tells us how well the model detects severe accidents (or any other class).</li>
-                <li><strong>F1-score:</strong> combines the mean of precision and recall into one number. It is useful when we need to balance the importance of both false positives and false negatives.</li>
-            </ul>
-            These metrics are particularly useful for imbalanced classes, such as accident severity, where certain classes may be underrepresented, and traditional accuracy may not fully capture the model's effectiveness.
-        </li>
-        <li>
-            <strong>Confusion Matrix</strong><br>
-            The confusion matrix visualizes the true positives, true negatives, false positives, and false negatives of the model’s predictions. By examining the matrix, we can understand how well the model is performing across different severity levels. It helps identify which classes are being misclassified more often and provides insight into whether the model struggles with certain severity levels.
-        </li>
-    </ol>
+    To evaluate the performance of the linear regression model, I used several key metrics:
 </p>
-<img src="" alt="Viz 5">
+<ul>
+  <li><strong>Mean Absolute Error (MAE):</strong> 245.85</li>
+  <li><strong>Mean Squared Error (MSE):</strong> 97065.55</li>
+  <li><strong>Root Mean Squared Error (RMSE):</strong> 311.55</li>
+  <li><strong>R² Score:</strong> 0.89</li>
+</ul>
+  <p>
+  These results indicate that the model fits the data well. The model's performance shows strong predictive capability with an R² score of 0.89, indicating that 89% of the variance in the coffee shop’s performance is explained by the features, suggesting a good fit.
+</p>
+<img src="docs/CoffeeEval1.png" alt="Viz 2">
+<img src="docs/CoffeeDis.png" alt="Viz 3">
+<img src="docs/CoffeeProb.png" alt="Viz 4">
 <!--
  <h2>Experiment 2</h2>
   <p>
@@ -151,7 +140,7 @@
   -->
   <h2>My Code</h2>
    <!-- I used https://nbviewer.jupyter.org/ -->
-  <iframe src="" width="100%" height="600px"></iframe>
+  <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/CoffeeShop.ipynb" width="100%" height="600px"></iframe>
   
   <h2>References</h2>
   <ul>
