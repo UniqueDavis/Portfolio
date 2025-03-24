@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Happiness Regression Project</title>
+  <title>Optimizing Coffee Shop Revenue Using Regression Project</title>
 </head>
 <body>
-  <h1>Project Three: World Happiness Regression </h1>
+  <h1>Project Three: Optimizing Coffee Shop Revenue Using Regression </h1>
   
   <h2>The Problem</h2>
   <p>
   Ro
   <p>
     Using the 
-    <a href="https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated" target="_blank">
-      World Happiness Report (2024) Dataset
+    <a href="https://www.kaggle.com/datasets/himelsarder/coffee-shop-daily-revenue-prediction-dataset/data" target="_blank">
+      Coffee Shop Daily Revenue Prediction Dataset
     </a>, this project aims to answer:
   </p>
   <ul>
-    <li>What factors most significantly influence the severity of traffic accidents, and how can they be used to predict accident outcomes?</li> 
+    <li>How much revenue will the coffee shop generate on a given day based on customer traffic, marketing spend, and other factors?</li> 
     <!--<li>How does driving experience influence accident severity?</li> -->
   </ul>
   </p>
   <p>
-    This project aims to explore meaningful patterns in road traffic accidents and contribute to a deeper understanding of how various factors influence accident severity.
+    This project aims to uncover meaningful patterns in daily coffee shop revenue and dive into how factors like marketing spend, foot traffic, and staffing impact sales performance through regression analysis.
   </p>
   
   <h2>Dataset Information</h2>
-  <p>The dataset contains 12316 rows, each representing instances of an accident, and 15 features. These features are important variables in determining the risk and severity of road traffic accidents. The features include:</p>
+  <p>The dataset contains 2,000 rows, each representing a day of operation for a coffee shop, and 7 features. These features are important variables that influence daily revenue. The features include:</p>
 
- <table border="1">
+<table border="1">
   <thead>
     <tr>
       <th>Feature</th>
@@ -38,67 +38,36 @@
   </thead>
   <tbody>
     <tr>
-      <td>Age_band_of_driver</td>
-      <td>The age group of the driver involved in the accident.</td>
+      <td>Number of Customers Per Day</td>
+      <td>Total number of customers visiting the coffee shop on any given day.</td>
     </tr>
     <tr>
-      <td>Sex_of_driver</td>
-      <td>The gender of the driver.</td>
+      <td>Average Order Value ($)</td>
+      <td>The average dollar amount spent by each customer during their visit.</td>
     </tr>
     <tr>
-      <td>Educational_level</td>
-      <td>The education level of the driver.</td>
+      <td>Operating Hours Per Day</td>
+      <td>The total number of hours the coffee shop is open for business each day.</td>
     </tr>
     <tr>
-      <td>Vehicle_driver_relation</td>
-      <td>The relationship between the driver and the vehicle.</td>
+      <td>Number of Employees</td>
+      <td>The number of employees working on a given day. This can influence service speed, customer satisfaction, and ultimately, sales.</td>
     </tr>
     <tr>
-      <td>Driving_experience</td>
-      <td>The number of years the driver has been driving.</td>
+      <td>Marketing Spend Per Day ($)</td>
+      <td>The amount of money spent on marketing campaigns or promotions on any given day.</td>
     </tr>
     <tr>
-      <td>Lanes_or_Medians</td>
-      <td>The type of lanes or medians present on the road where the accident occurred.</td>
+      <td>Location Foot Traffic (people/hour)</td>
+      <td>The number of people passing by the coffee shop per hour, a variable indicative of the shop's location and its potential to attract customers.</td>
     </tr>
     <tr>
-      <td>Types_of_Junction</td>
-      <td>The type of road junction where the accident took place.</td>
-    </tr>
-    <tr>
-      <td>Road_surface_type</td>
-      <td>The type of road surface at the accident location.</td>
-    </tr>
-    <tr>
-      <td>Light_conditions</td>
-      <td>The lighting conditions at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Weather_conditions</td>
-      <td>The weather conditions at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Type_of_collision</td>
-      <td>The nature of the collision.</td>
-    </tr>
-    <tr>
-      <td>Vehicle_movement</td>
-      <td>The movement of the vehicle at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Pedestrian_movement</td>
-      <td>The movement of pedestrians involved in the accident.</td>
-    </tr>
-    <tr>
-      <td>Cause_of_accident</td>
-      <td>The reported cause of the accident.</td>
-    </tr>
-    <tr>
-      <td>Accident_severity</td>
-      <td>The severity of the accident.</td>
+      <td>Daily Revenue ($)</td>
+      <td>The total revenue generated by the coffee shop each day. It is calculated as a combination of customer visits, average spending, and other operational factors like marketing spend and staff availability.</td>
     </tr>
   </tbody>
 </table>
+
 
   <h2>What is regression and how does it work?</h2>
   <p>
@@ -149,13 +118,9 @@
         </li>
     </ol>
 </p>
-<img src="" alt="Viz 5"> <img src="../docs/output.png" alt="Viz 4">
-  <h2>Storytelling</h2>
-<p>
-    Th
-</p>
-
-  <h2>Experiment 2</h2>
+<img src="" alt="Viz 5">
+<!--
+ <h2>Experiment 2</h2>
   <p>
     Fo 
 </p>
@@ -183,7 +148,7 @@
 <p>
     Ho
 </p>
-  
+  -->
   <h2>My Code</h2>
    <!-- I used https://nbviewer.jupyter.org/ -->
   <iframe src="" width="100%" height="600px"></iframe>
@@ -191,8 +156,8 @@
   <h2>References</h2>
   <ul>
     <li>
-      <a href="https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated" target="_blank">
-        World Happiness Report (2024) - Kaggle
+      <a href="https://www.kaggle.com/datasets/himelsarder/coffee-shop-daily-revenue-prediction-dataset/data">
+        Coffee Shop Daily Revenue Prediction Dataset - Kaggle
       </a>
     </li>
     <li>
