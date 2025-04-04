@@ -13,7 +13,7 @@
   
   <h2>The Problem</h2>
   <p>
-  Predicting how a coffee shop will perform can really help owners fine-tune their business strategies. According to the National Coffee Association (NCA), "The number of American adults who have had coffee in the past day has increased by 37% since 2004, putting past-day coffee consumption at its highest level in more than 20 years." With people drinking coffee more than ever before, it's important for coffee shops to understand what factors drive sales. 
+  Predicting a coffee shop's daily performance can help owners fine-tune their strategies for better profitability. According to the National Coffee Association (NCA), "The number of American adults who have had coffee in the past day has increased by 37% since 2004, putting past-day coffee consumption at its highest level in more than 20 years." With people drinking coffee more than ever before, it's important for coffee shops to understand what factors drive sales. 
   <p>
     Using the 
     <a href="https://www.kaggle.com/datasets/himelsarder/coffee-shop-daily-revenue-prediction-dataset/data" target="_blank">
@@ -121,7 +121,7 @@
   Since the dataset did not contain any missing values or duplicates, I began modeling without needing to clean the data further.
 </p>
 
-  <h2>Experiment 1: Linear Regression Modeling</h2>
+  <h2>Experiment 1: Linear Regression Model</h2>
 <p>
     For the first experiment, I built a linear regression model to predict the coffee shop's performance based on the available features. The model was implemented using the LinearRegression class from the scikit-learn library in Python. I split the dataset into training and testing sets, training the model on the training data, and using it to predict on the testing data.
 </p>
@@ -137,13 +137,13 @@
   <li><strong>R² Score:</strong> 0.89</li>
 </ul>
   <p>
-  These results indicate that the model fits the data well. The model's performance shows strong predictive capability with an R² score of 0.89, indicating that 89% of the variance in the coffee shop’s performance is explained by the features, suggesting a good fit.
+  These results indicate that the model fits the data well. With an R² score of 0.89, the model explains 89% of the variance in the coffee shop’s performance, demonstrating strong predictive capability and a good overall fit.
 </p>
 <img src="../docs/CoffeeEval1.png" alt="Viz 2">
 <img src="../docs/CoffeeDis.png" alt="Viz 3">
 <img src="../docs/CoffeeProb.png" alt="Viz 4">
 
- <h2>Experiment 2: Random Forest Regression </h2>
+ <h2>Experiment 2: Random Forest Regression Model </h2>
   <p>
     For the second experiment, I implemented a Random Forest Regressor model to improve predictive performance by capturing more complex relationships in the data. This model was implemented using the RandomForestRegressor class from the scikit-learn library with n_estimators set to 500 and oob_score enabled to validate accuracy internally.
 </p>
@@ -156,7 +156,7 @@
   <li><strong>OOB Score:</strong> 0.91</li>
 </ul>
   <p>
-  These results show a significant improvement over the linear regression model. The RMSE dropped from 311.55 to 74.30, and the R² score increased to 0.997, meaning the model explains 99.7% of the variance in the target variable. This indicates a much more accurate and robust model.
+  These results show a clear improvement over the linear regression model. The Mean Absolute Error (MAE) dropped from 245.85 to 224.96, and the Mean Squared Error (MSE) decreased from 97,065.55 to 80,572.78. Additionally, the Out-of-Bag (OOB) score was 0.91, indicating better generalization. These improvements suggest the Random Forest model captures more complex relationships and delivers stronger performance overall.
 </p>
   <img src="../docs/rf1.png" alt="Viz 2">
   <img src="../docs/rf2.png" alt="Viz 2">
@@ -173,7 +173,7 @@
   <li><strong>R² Score:</strong> 0.89</li>
 </ul>
   <p>
-  The Lasso model performed slightly better than the original Linear Regression model, especially in terms of RMSE and R². However, its performance was still significantly lower than that of the Random Forest model. Lasso helped in feature selection and reduced the influence of less important variables, but it still couldn't capture nonlinear relationships effectively.
+  The Lasso model performed slightly better than the original linear regression in terms of MAE and MSE. However, its R² score remained at 0.89. Lasso helped simplify the model by reducing the impact of less important features, but it still couldn’t effectively model nonlinear patterns as well as the Random Forest.
 </p>
   <h2>Impact Section</h2>
   <p>
@@ -184,10 +184,10 @@
 </p>
   <h2>Conclusion</h2>
 <p>
-   From this project, I learned a lot about how different models handle the same data in totally different ways. Linear regression gave me a decent baseline, but once I switched to Random Forest, I saw a rise in accuracy with the RMSE dropping from over 300 to just 74. That showed me how much more powerful ensemble methods can be when it comes to capturing complex relationships.
+   From this project, I learned a lot about how different models handle the same data in totally different ways. Linear regression gave me a solid baseline, but once I switched to Random Forest, I noticed better accuracy, which showed me how much more powerful ensemble methods can be for capturing complex patterns.
 </p>
   <p>
-  I also found that the regularization with Lasso helped simplify the model and cut down on noise, though it didn’t perform as well as Random Forest overall. This project helped me understand not just how to build models, but how to evaluate them critically and make informed changes based on what the data is telling me. 
+  I also saw how Lasso helped simplify the model and cut down on noise by focusing on the most important features, even though it didn’t perform quite as well as Random Forest. Overall, this project helped me see the importance of not just building models, but really evaluating them and making smarter choices based on what the data’s telling me. 
 </p>
 
   <h2>My Code</h2>
