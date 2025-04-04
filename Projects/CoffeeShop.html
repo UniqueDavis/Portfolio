@@ -111,27 +111,52 @@
 
  <h2>Experiment 2: Random Forest Regression </h2>
   <p>
-    Fo 
+    For the second experiment, I implemented a Random Forest Regressor model to improve predictive performance by capturing more complex relationships in the data. This model was implemented using the RandomForestRegressor class from the scikit-learn library with n_estimators set to 500 and oob_score enabled to validate accuracy internally.
 </p>
 <p>
-    Ho
+    To evaluate the performance of the Random Forest model, I used the following metrics:
 </p>
-  <img src="../docs/" alt="Viz 2">
+<ul>
+  <li><strong>Mean Absolute Error (MAE):</strong> 245.60</li>
+  <li><strong>Mean Squared Error (MSE):</strong> 5523.28</li>
+  <li><strong>Root Mean Squared Error (RMSE):</strong> 74.30</li>
+  <li><strong>R² Score:</strong> 0.997</li>
+  <li><strong>OOB Score:</strong> 0.9737</li>
+</ul>
+  <p>
+  These results show a significant improvement over the linear regression model. The RMSE dropped from 311.55 to 74.30, and the R² score increased to 0.997, meaning the model explains 99.7% of the variance in the target variable. This indicates a much more accurate and robust model.
+</p>
+  <img src="../docs/rf1.png" alt="Viz 2">
+  <img src="../docs/rf2.png" alt="Viz 2">
   <h2>Experiment 3: Lasso Regression</h2>
   <p>
-    Fo 
+    For the third experiment, I tried Lasso Regression to see if introducing regularization could help reduce potential overfitting and identify key features. I used the Lasso class from scikit-learn and kept the same training and testing strategy.
 </p>
 <p>
-    Ho
+    The performance metrics for the Lasso model were:
 </p>
-  <img src="../docs/" alt="Viz 2">
+<ul>
+  <li><strong>Mean Absolute Error (MAE):</strong> 247.15</li>
+  <li><strong>Mean Squared Error (MSE):</strong> 89068.37</li>
+  <li><strong>Root Mean Squared Error (RMSE):</strong> 298.44</li>
+  <li><strong>R² Score:</strong> 0.91</li>
+</ul>
+  <p>
+  The Lasso model performed slightly better than the original Linear Regression model, especially in terms of RMSE and R². However, its performance was still significantly lower than that of the Random Forest model. Lasso helped in feature selection and reduced the influence of less important variables, but it still couldn't capture nonlinear relationships effectively.
+</p>
   <h2>Impact Section</h2>
   <p>
-    This project highlights how data-driven insights can help coffee shop owners make smarter business decisions. By using regression analysis, we can predict daily revenue and identify which factors truly impact sales. This has real-world implications, as owners can optimize marketing spend, staffing levels, and pricing strategies based on data rather than guesswork. However, there are ethical concerns—over-reliance on predictions could lead to cutting employee hours or prioritizing high-spending customers over overall customer experience. Additionally, if the dataset isn’t diverse enough, the model might not generalize well to different coffee shop locations or business models.
+    This project has the potential to make a big impact on how coffee shop businesses make data-driven decisions. By accurately predicting performance based on factors like customer flow, average sales, and product mix, shop owners can better understand what drives revenue and optimize their operations. That might mean adjusting store hours, staffing, or even product offerings based on what the model finds most important.
+  </p>
+<p>
+  On the flip side, there are some ethical concerns. If this model were used without proper transparency or context, there’s a risk of making decisions that ignore human factors—like cutting staff based on predicted sales, without considering employee well-being. Also, if the data used contains hidden biases, it could reinforce unfair business practices. So while the model is useful, it’s important to make sure it’s interpreted responsibly and not just used blindly.
 </p>
   <h2>Conclusion</h2>
 <p>
-    Through this project, I learned how different features influence a coffee shop’s revenue and how regression analysis can be a powerful tool for business forecasting. Pre-processing steps like checking for missing values ensured clean data, and feature selection helped identify the most relevant predictors. The strong R² score (0.89) shows that the model explains a significant portion of revenue variation, making it useful for decision-making. However, the weaker correlation of some features (like marketing spend and foot traffic) suggests there’s more complexity in customer behavior that a simple linear model might not capture. Future improvements could involve testing non-linear models or incorporating external factors like weather or seasonal trends.
+   From this project, I learned a lot about how different models handle the same data in totally different ways. Linear regression gave me a decent baseline, but once I switched to Random Forest, I saw a huge boost in accuracy—dropping the RMSE from over 300 to just 74. That showed me how much more powerful ensemble methods can be when it comes to capturing complex relationships.
+</p>
+  <p>
+  I also found that regularization with Lasso helped simplify the model and cut down on noise, though it didn’t perform as well as Random Forest overall. The experiments also made it clear how important pre-processing is. Standardizing features and selecting the right variables had a big effect on results. This project helped me understand not just how to build models, but how to evaluate them critically and make informed changes based on what the data is telling me. 
 </p>
 
   <h2>My Code</h2>
