@@ -13,7 +13,7 @@
   
   <h2>The Problem</h2>
   <p>
-  Predicting how a coffee shop will perform can really help owners fine-tune their business strategies. According to the National Coffee Association (NCA), "The number of American adults who have had coffee in the past day has increased by 37% since 2004, putting past-day coffee consumption at its highest level in more than 20 years." With more people drinking coffee more than ever before, it's important for coffee shops to understand what factors drive sales. 
+  Predicting how a coffee shop will perform can really help owners fine-tune their business strategies. According to the National Coffee Association (NCA), "The number of American adults who have had coffee in the past day has increased by 37% since 2004, putting past-day coffee consumption at its highest level in more than 20 years." With people drinking coffee more than ever before, it's important for coffee shops to understand what factors drive sales. 
   <p>
     Using the 
     <a href="https://www.kaggle.com/datasets/himelsarder/coffee-shop-daily-revenue-prediction-dataset/data" target="_blank">
@@ -92,7 +92,11 @@
   &nbsp;&nbsp;&nbsp;&nbsp; <em>β</em> values are the learned weights (coefficients),<br>
   &nbsp;&nbsp;&nbsp;&nbsp; <em>ε</em> is the error term.
 </p>
-
+  
+<p>
+  <strong>Random Forest Regression</strong> is a non-linear, ensemble learning method. It builds multiple decision trees and averages their predictions to improve accuracy and reduce overfitting. Unlike linear models, it can capture complex relationships between variables and handle a mix of data types more effectively.
+</p>
+  
 <p>
   <strong>Lasso Regression</strong> is similar to linear regression but includes regularization. It tries to reduce overfitting by penalizing the absolute size of the coefficients. The loss function looks like:
 </p>
@@ -101,16 +105,13 @@
   $$Loss = MSE + \lambda \sum_{j=1}^{n} |\beta_j|$$
 </p>
 <p>
-  This encourages sparsity, which means some coefficients can be driven to zero — effectively performing feature selection.
-</p>
-<p>
-  <strong>Random Forest Regression</strong> is a non-linear, ensemble learning method. It builds multiple decision trees and averages their predictions to improve accuracy and reduce overfitting. Unlike linear models, it can capture complex relationships between variables and handle a mix of data types more effectively.
+  This encourages sparsity, which means some coefficients can be driven to zero, effectively performing feature selection.
 </p>
 
   <h2>Experiment 1: Data understanding</h2>
 <p>
-    To begin the analysis, I first explored the dataset for any patterns, correlations, and distributions. I made a pairplot to visualize the relationships between all of the features. From this I noticed that Number_of_Customers_Per_Day and Average_Order_Value had a strong corelation with Daily_Revenue. For Marketing_Spend_Per_Day and Location_Foot_Traffic there was only a faint amount of correlation with Daily_Revenue. Then for Operating_Hours_Per_Day and Number_of_Employees
-   theres no corelation with Daily_Revenue
+    To begin the analysis, I first explored the dataset for any patterns, correlations, and distributions. I made a pairplot to visualize the relationships between all of the features. From this I noticed that Number_of_Customers_Per_Day and Average_Order_Value had a strong corelation with Daily_Revenue. Marketing_Spend_Per_Day and Location_Foot_Traffic had only a faint amount of correlation with Daily_Revenue. Then for Operating_Hours_Per_Day and Number_of_Employees
+   theres no corelation with Daily_Revenue.
 </p>
 <img src="../docs/CoffeeDE.png" alt="Viz 1">
 
@@ -150,11 +151,9 @@
     To evaluate the performance of the Random Forest model, I used the following metrics:
 </p>
 <ul>
-  <li><strong>Mean Absolute Error (MAE):</strong> 245.60</li>
-  <li><strong>Mean Squared Error (MSE):</strong> 5523.28</li>
-  <li><strong>Root Mean Squared Error (RMSE):</strong> 74.30</li>
-  <li><strong>R² Score:</strong> 0.997</li>
-  <li><strong>OOB Score:</strong> 0.9737</li>
+  <li><strong>Mean Absolute Error (MAE):</strong> 224.96</li>
+  <li><strong>Mean Squared Error (MSE):</strong> 80572.78</li>
+  <li><strong>OOB Score:</strong> 0.91</li>
 </ul>
   <p>
   These results show a significant improvement over the linear regression model. The RMSE dropped from 311.55 to 74.30, and the R² score increased to 0.997, meaning the model explains 99.7% of the variance in the target variable. This indicates a much more accurate and robust model.
@@ -169,27 +168,26 @@
     The performance metrics for the Lasso model were:
 </p>
 <ul>
-  <li><strong>Mean Absolute Error (MAE):</strong> 247.15</li>
-  <li><strong>Mean Squared Error (MSE):</strong> 89068.37</li>
-  <li><strong>Root Mean Squared Error (RMSE):</strong> 298.44</li>
-  <li><strong>R² Score:</strong> 0.91</li>
+  <li><strong>Mean Absolute Error (MAE):</strong> 245.83</li>
+  <li><strong>Mean Squared Error (MSE):</strong> 97057.74</li>
+  <li><strong>R² Score:</strong> 0.89</li>
 </ul>
   <p>
   The Lasso model performed slightly better than the original Linear Regression model, especially in terms of RMSE and R². However, its performance was still significantly lower than that of the Random Forest model. Lasso helped in feature selection and reduced the influence of less important variables, but it still couldn't capture nonlinear relationships effectively.
 </p>
   <h2>Impact Section</h2>
   <p>
-    This project has the potential to make a big impact on how coffee shop businesses make data-driven decisions. By accurately predicting performance based on factors like customer flow, average sales, and product mix, shop owners can better understand what drives revenue and optimize their operations. That might mean adjusting store hours, staffing, or even product offerings based on what the model finds most important.
+    This project has the potential to make a big impact on how coffee shop businesses make data-driven decisions. By accurately predicting performance based on factors like the number of customer per day, average sales, and marketing costs, shop owners can better understand what drives revenue and optimize their operations. That might mean adjusting store hours, staffing, or even product offerings based on what the model finds most important.
   </p>
 <p>
-  On the flip side, there are some ethical concerns. If this model were used without proper transparency or context, there’s a risk of making decisions that ignore human factors—like cutting staff based on predicted sales, without considering employee well-being. Also, if the data used contains hidden biases, it could reinforce unfair business practices. So while the model is useful, it’s important to make sure it’s interpreted responsibly and not just used blindly.
+  However, there are some ethical concerns. If this model was used without transparency or context, there’s a risk of making decisions that ignore human factors like cutting employees based on predicted sales, without considering the employees well-being. Also, if the data used contains hidden biases, it could reinforce unfair business practices. So, it’s important to make sure the data is interpreted responsibly.
 </p>
   <h2>Conclusion</h2>
 <p>
-   From this project, I learned a lot about how different models handle the same data in totally different ways. Linear regression gave me a decent baseline, but once I switched to Random Forest, I saw a huge boost in accuracy—dropping the RMSE from over 300 to just 74. That showed me how much more powerful ensemble methods can be when it comes to capturing complex relationships.
+   From this project, I learned a lot about how different models handle the same data in totally different ways. Linear regression gave me a decent baseline, but once I switched to Random Forest, I saw a rise in accuracy with the RMSE dropping from over 300 to just 74. That showed me how much more powerful ensemble methods can be when it comes to capturing complex relationships.
 </p>
   <p>
-  I also found that regularization with Lasso helped simplify the model and cut down on noise, though it didn’t perform as well as Random Forest overall. The experiments also made it clear how important pre-processing is. Standardizing features and selecting the right variables had a big effect on results. This project helped me understand not just how to build models, but how to evaluate them critically and make informed changes based on what the data is telling me. 
+  I also found that the regularization with Lasso helped simplify the model and cut down on noise, though it didn’t perform as well as Random Forest overall. This project helped me understand not just how to build models, but how to evaluate them critically and make informed changes based on what the data is telling me. 
 </p>
 
   <h2>My Code</h2>
