@@ -70,9 +70,39 @@
 
 
   <h2>What is regression and how does it work?</h2>
-  <p>
+<p>
   Regression in machine learning refers to a supervised learning technique where the goal is to predict a continuous numerical value based on one or more independent features. It finds relationships between variables so that predictions can be made. There are many types of regression such as simple linear regression, multiple linear regression, and support vector regression.
-  </p>
+</p>
+<p>
+  In this project, I used Linear Regression, Lasso Regression, and Random Forest Regression to model the coffee shop’s performance.
+</p>
+<p>
+  <strong>Linear Regression</strong> is the most straightforward. It tries to fit a straight line through the data using the equation:
+</p>
+<p style="text-align: center;">
+  $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \varepsilon$$
+</p>
+<p>
+  where:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <em>y</em> is the predicted output,<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <em>x₁...xₙ</em> are the input features,<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <em>β</em> values are the learned weights (coefficients),<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <em>ε</em> is the error term.
+</p>
+
+<p>
+  <strong>Lasso Regression</strong> is similar to linear regression but includes regularization. It tries to reduce overfitting by penalizing the absolute size of the coefficients. The loss function looks like:
+</p>
+
+<p style="text-align: center;">
+  $$Loss = MSE + \lambda \sum_{j=1}^{n} |\beta_j|$$
+</p>
+<p>
+  This encourages sparsity, which means some coefficients can be driven to zero — effectively performing feature selection.
+</p>
+<p>
+  <strong>Random Forest Regression</strong> is a non-linear, ensemble learning method. It builds multiple decision trees and averages their predictions to improve accuracy and reduce overfitting. Unlike linear models, it can capture complex relationships between variables and handle a mix of data types more effectively.
+</p>
 
   <h2>Experiment 1: Data understanding</h2>
 <p>
