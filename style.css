@@ -169,16 +169,3 @@ header {
 #contact a:hover {
     color: white;
 }
-
-#personal-projects,
-#group-projects {
-    padding: 4rem 10%;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-#personal-projects h2,
-#group-projects h2 {
-    font-size: 2rem;
-    color: #0A192F;
-}
