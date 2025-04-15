@@ -89,13 +89,13 @@ header {
 }
 
 /* About me Section */
-#about me {
+#about {
     padding: 4rem 10%;
     background-color: white;
     text-align: center;
 }
 
-#about me h2 {
+#about h2 {
     font-size: 2rem;
     color: #0A192F;
 }
