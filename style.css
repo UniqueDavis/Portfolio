@@ -88,14 +88,14 @@ header {
     background-color: #2C3E50; /* Darker Grayish Blue */
 }
 
-/* About Section */
-#about {
+/* About me Section */
+#about me {
     padding: 4rem 10%;
     background-color: white;
     text-align: center;
 }
 
-#about h2 {
+#about me h2 {
     font-size: 2rem;
     color: #0A192F;
 }
