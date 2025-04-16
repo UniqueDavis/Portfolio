@@ -10,15 +10,15 @@
   
   <h2>Introduce the problem</h2>
   <p>
-  R
+  In today’s competitive market, understanding customer spending behavior is key for businesses looking to optimize their product offerings and marketing strategies. By segmenting customers into distinct groups, companies can tailor their approaches to target different spending habits.
   <p>
     Using the 
-    <a href="https://www.kaggle.com/datasets/zeesolver/consumer-behavior-and-shopping-habits-dataset?select=shopping_trends.csv" target="_blank">
-      Consumer Behavior and Shopping Habits Dataset
+    <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
+      Shop Customer Data
     </a>, this project aims to answer:
   </p>
   <ul>
-    <li>Can clustering reveal distinct spending patterns, separating big spenders from budget shoppers? And which customers are most responsive to discounts and promotional offers? </li> 
+    <li>Can clustering reveal distinct spending patterns, separating big spenders from budget shoppers? </li> 
     <!--<li>How does driving experience influence accident severity?</li> -->
   </ul>
   </p>
@@ -27,9 +27,9 @@
   </p>
   
   <h2>Introduce the data</h2>
-  <p>The dataset contains 12316 rows, each representing instances of an accident, and 15 features. These features are important variables in determining the risk and severity of road traffic accidents. The features include:</p>
+  <p>The dataset contains 2000 rows, each representing instances of an accident, and 8 features. The features include:</p>
 
- <table border="1">
+<table border="1">
   <thead>
     <tr>
       <th>Feature</th>
@@ -38,71 +38,45 @@
   </thead>
   <tbody>
     <tr>
-      <td>Age_band_of_driver</td>
-      <td>The age group of the driver involved in the accident.</td>
+      <td>Customer ID</td>
+      <td>A unique identifier assigned to each customer.</td>
     </tr>
     <tr>
-      <td>Sex_of_driver</td>
-      <td>The gender of the driver.</td>
+      <td>Gender</td>
+      <td>The gender of the customer.</td>
     </tr>
     <tr>
-      <td>Educational_level</td>
-      <td>The education level of the driver.</td>
+      <td>Age</td>
+      <td>The age of the customer.</td>
     </tr>
     <tr>
-      <td>Vehicle_driver_relation</td>
-      <td>The relationship between the driver and the vehicle.</td>
+      <td>Annual Income</td>
+      <td>The annual income of the customer, representing their purchasing power.</td>
     </tr>
     <tr>
-      <td>Driving_experience</td>
-      <td>The number of years the driver has been driving.</td>
+      <td>Spending Score</td>
+      <td>A score assigned by the shop based on the customer’s spending behavior.</td>
     </tr>
     <tr>
-      <td>Lanes_or_Medians</td>
-      <td>The type of lanes or medians present on the road where the accident occurred.</td>
+      <td>Profession</td>
+      <td>The profession of the customer.</td>
     </tr>
     <tr>
-      <td>Types_of_Junction</td>
-      <td>The type of road junction where the accident took place.</td>
+      <td>Work Experience</td>
+      <td>The number of years the customer has been in their profession.</td>
     </tr>
     <tr>
-      <td>Road_surface_type</td>
-      <td>The type of road surface at the accident location.</td>
-    </tr>
-    <tr>
-      <td>Light_conditions</td>
-      <td>The lighting conditions at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Weather_conditions</td>
-      <td>The weather conditions at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Type_of_collision</td>
-      <td>The nature of the collision.</td>
-    </tr>
-    <tr>
-      <td>Vehicle_movement</td>
-      <td>The movement of the vehicle at the time of the accident.</td>
-    </tr>
-    <tr>
-      <td>Pedestrian_movement</td>
-      <td>The movement of pedestrians involved in the accident.</td>
-    </tr>
-    <tr>
-      <td>Cause_of_accident</td>
-      <td>The reported cause of the accident.</td>
-    </tr>
-    <tr>
-      <td>Accident_severity</td>
-      <td>The severity of the accident.</td>
+      <td>Family Size</td>
+      <td>The size of the customer’s family, potentially influencing their purchasing decisions.</td>
     </tr>
   </tbody>
 </table>
 
+
   <h2>What is clustering and how does it work?</h2>
    <p>
-  T
+  Clustering is a type of machine learning (unsupervised learning) technique that groups data points based on their similarity with each other. Clustering can help you group customers with similar purchasing behaviors, which can then be used for targeted marketing, product recommendations, or customer segmentation.
+     There are different types of clustering...
   </p>
   
   <h2>Pre-processing the data</h2>
@@ -147,13 +121,13 @@
   <h2>References</h2>
   <ul>
     <li>
-      <a href="https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents" target="_blank">
-        Consumer Behavior and Shopping Habits Dataset - Kaggle
+      <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
+        Shop Customer Data - Kaggle
       </a>
     </li>
     <li>
-      <a href="" target="_blank">
-        R
+      <a href="https://www.geeksforgeeks.org/clustering-in-machine-learning/?ref=header_outind" target="_blank">
+        Clustering in Machine Learning - geeksforgeeks
       </a>
     </li>
     <li>
