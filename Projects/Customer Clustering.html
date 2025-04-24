@@ -15,15 +15,15 @@
     Using the 
     <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
       Shop Customer Data
-    </a>, this project aims to answer:
+    </a>, this project aims to ansIr:
   </p>
   <ul>
-    <li>How can we group customers based on their attributes and behaviors? </li> 
+    <li>How can I group customers based on their attributes and behaviors? </li> 
     <!--<li>How does driving experience influence accident severity?</li> -->
   </ul>
   </p>
   <p>
-    This project aims to explore meaningful patterns in road traffic accidents and contribute to a deeper understanding of how various factors influence accident severity.
+    This project aims to explore meaningful patterns in customer shopping behaviors.
   </p>
   
   <h2>Introduce the data</h2>
@@ -51,7 +51,7 @@
     </tr>
     <tr>
       <td>Annual Income</td>
-      <td>The annual income of the customer, representing their purchasing power.</td>
+      <td>The annual income of the customer, representing their purchasing poIr.</td>
     </tr>
     <tr>
       <td>Spending Score</td>
@@ -81,42 +81,52 @@
   
   <h2>Pre-processing the data</h2>
    <p>
-  T
-  </p>
+Before performing clustering, the dataset was cleaned and preprocessed. This included:
+<ul>
+  <li>Handling missing values (e.g., filling or dropping them).</li>
+  <li>Encoding categorical variables such as Gender and Profession using Label Encoding or One-Hot Encoding.</li>
+  <li>Normalizing/Standardizing numerical features like Age and Income to ensure fair clustering.</li>
+</ul>
+These steps are critical to avoid bias and ensure that each feature contributes equally to the clustering algorithm.
+</p>
   
   <h2>Data Understanding/Visualization</h2>
   <p>
-  T
-  </p>
+I explored the distribution of key variables such as Age, Annual Income, and Spending Score. Using visualizations like histograms and scatter plots, I identified patterns and potential outliers. 
+A scatter plot of Annual Income vs Spending Score was especially helpful to visualize natural groupings before applying clustering algorithms.
+</p>
 
   <h2>Modeling (Clustering)</h2>
 <p>
-    Fo
+I applied K-Means Clustering to the dataset. The number of clusters (k) was determined using the Elbow and Silhouette Method, which helps identify the point where adding more clusters no longer significantly reduces the within-cluster sum of squares (WCSS). 
+After determining the optimal k, which I chose 6. I fitted the K-Means algorithm and assigned each customer to a cluster.
 </p>
-<p>
-    H
-</p>
+
   
   <h2>Storytelling (Clustering Analysis)</h2>
 <p>
-    Th
+Each cluster was analyzed to understand its characteristics. For example:
+<ul>
+  <li>Cluster 1: High income, low spending – potential for upselling.</li>
+  <li>Cluster 2: Low income, high spending – price-sensitive but engaged shoppers.</li>
+  <li>Cluster 3: Balanced income and spending – average shoppers.</li>
+  <li>Cluster 4: High income, low spending – potential for upselling.</li>
+  <li>Cluster 5: Low income, high spending – price-sensitive but engaged shoppers.</li>
+  <li>Cluster 6: Balanced income and spending – average shoppers.</li>
+</ul>
+These insights help businesses tailor their marketing strategies to specific customer groups.
 </p>
-<p>
-    H
-</p>
-<p>
-    T
-</p>
+
 
   <h2>Impact Section</h2>
 <p>
-    This can be beneficial to businesses because it allows them to identify what is popular among different customer groups, improving customer experience and marketing strategies. However, there are privacy concerns when handling customer demographic data. There is also a risk of overgeneralizing certain groups. What might be missing from the data are customers' interests, values, and lifestyles. This is important because it helps explain why people buy certain products, providing deeper insights into their shopping habits, which could lead to better marketing strategies.
+    This can be beneficial to businesses because it allows them to identify what is popular among different customer groups, improving customer experience and marketing strategies. HoIver, there are privacy concerns when handling customer demographic data. There is also a risk of overgeneralizing certain groups. What might be missing from the data are customers' interests, values, and lifestyles. This is important because it helps explain why people buy certain products, providing deeper insights into their shopping habits, which could lead to better marketing strategies.
 </p>
   
   <h2>My Code</h2>
-   <!-- I used https://nbviewer.jupyter.org/  -->
+   <!-- I used https://nbvieIr.jupyter.org/  -->
   
-  <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
+  <iframe src="https://nbvieIr.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
 
   <h2>References</h2>
   <ul>
