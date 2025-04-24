@@ -19,11 +19,10 @@
   </p>
   <ul>
     <li>How can I group customers based on their attributes and behaviors? </li> 
-    <!--<li>How does driving experience influence accident severity?</li> -->
   </ul>
   </p>
   <p>
-    This project aims to explore meaningful patterns in customer shopping behaviors.
+    The goal is to uncover meaningful patterns in customer shopping behaviors that can actually be used to make smarter decisions.
   </p>
   
   <h2>Introduce the data</h2>
@@ -75,19 +74,23 @@
 
   <h2>What is clustering and how does it work?</h2>
    <p>
-  Clustering is a type of machine learning (unsupervised learning) technique that groups data points based on their similarity with each other. Clustering can help you group customers with similar purchasing behaviors, which can then be used for targeted marketing, product recommendations, or customer segmentation.
-     There are different types of clustering...
+  Clustering is a type of unsupervised machine learning that groups data points based on similarity. It helps us find natural groupings in data without predefined labels.
+    For this project, clustering allows us to discover customer segments with similar shopping behaviors. It’s useful for things like personalized marketing or promotions. 
+    There are several types of clustering like Hierarchical Clustering and Agglomerative Clustering, but I used K-Means Clustering, which is one of the most popular ones.
   </p>
+  <p>
+  <strong>K-Means Clustering</strong> is an algorithm that divides data into <em>k</em> groups, where each group is represented by its center (the average of the points in the group). The algorithm works by repeatedly assigning each data point to the closest group center and then updating the center based on the points in the group. This process continues until the centers no longer change or a set number of iterations is reached.
+</p>
   
   <h2>Pre-processing the data</h2>
    <p>
 Before performing clustering, the dataset was cleaned and preprocessed. This included:
 <ul>
-  <li>Handling missing values (e.g., filling or dropping them).</li>
-  <li>Encoding categorical variables such as Gender and Profession using Label Encoding or One-Hot Encoding.</li>
-  <li>Normalizing/Standardizing numerical features like Age and Income to ensure fair clustering.</li>
+  <li>Handling missing values by either filling or dropping them..</li>
+  <li>Encoding the categorical variables, Gender and Profession by using One-Hot Encoding.</li>
+  <li>Standardizing numerical features like Age and Income to make sure everything’s on the same scale..</li>
 </ul>
-These steps are critical to avoid bias and ensure that each feature contributes equally to the clustering algorithm.
+ These steps help ensure each feature contributes fairly to the clustering algorithm.
 </p>
   
   <h2>Data Understanding/Visualization</h2>
@@ -98,34 +101,30 @@ A scatter plot of Annual Income vs Spending Score was especially helpful to visu
 
   <h2>Modeling (Clustering)</h2>
 <p>
-I applied K-Means Clustering to the dataset. The number of clusters (k) was determined using the Elbow and Silhouette Method, which helps identify the point where adding more clusters no longer significantly reduces the within-cluster sum of squares (WCSS). 
-After determining the optimal k, which I chose 6. I fitted the K-Means algorithm and assigned each customer to a cluster.
+I used K-Means Clustering. To find the best number of clusters (k), I used the Elbow and Silhouette methods. I used on 6 clusters. Then, I fit the model and assigned each customer to one of these clusters.
 </p>
 
-  
   <h2>Storytelling (Clustering Analysis)</h2>
 <p>
-Each cluster was analyzed to understand its characteristics. For example:
+Here’s a quick breakdown of what each cluster looked like:
 <ul>
-  <li>Cluster 1: High income, low spending – potential for upselling.</li>
-  <li>Cluster 2: Low income, high spending – price-sensitive but engaged shoppers.</li>
-  <li>Cluster 3: Balanced income and spending – average shoppers.</li>
-  <li>Cluster 4: High income, low spending – potential for upselling.</li>
-  <li>Cluster 5: Low income, high spending – price-sensitive but engaged shoppers.</li>
-  <li>Cluster 6: Balanced income and spending – average shoppers.</li>
+  <li>Cluster 1: Older individuals with decent income who spend moderately.</li>
+  <li>Cluster 2: Middle-aged high earners who tend to spend a lot.</li>
+  <li>Cluster 3: Middle-aged people with low income and very low spending.</li>
+  <li>Cluster 4: Wealthy but conservative middle-aged spenders.</li>
+  <li>Cluster 5: Older, moderate earners who spend very little</li>
+  <li>Cluster 6: Younger, low-income group with the lowest spending.</li>
 </ul>
 These insights help businesses tailor their marketing strategies to specific customer groups.
 </p>
 
-
   <h2>Impact Section</h2>
 <p>
-    This can be beneficial to businesses because it allows them to identify what is popular among different customer groups, improving customer experience and marketing strategies. HoIver, there are privacy concerns when handling customer demographic data. There is also a risk of overgeneralizing certain groups. What might be missing from the data are customers' interests, values, and lifestyles. This is important because it helps explain why people buy certain products, providing deeper insights into their shopping habits, which could lead to better marketing strategies.
+    This project can help businesses figure out what’s working for each customer group and improve marketing strategies. But handling personal demographic data raises privacy concerns, and there’s a risk of overgeneralizing. What’s missing from the data? Stuff like customer interests, values, and lifestyles — things that actually explain why people buy what they buy.
 </p>
   
   <h2>My Code</h2>
    <!-- I used https://nbvieIr.jupyter.org/  -->
-  
   <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
 
   <h2>References</h2>
