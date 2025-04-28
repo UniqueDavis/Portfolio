@@ -8,153 +8,117 @@
 <body>
   <h1>Project Four: Customer Shop Clustering</h1>
   
-  <h2>Introduce the problem</h2>
+  <h2>Introduction</h2>
   <p>
-  In today’s competitive market, understanding customer spending behavior is key for businesses looking to optimize their product offerings and marketing strategies. By segmenting customers into distinct groups, companies can tailor their approaches to target different spending habits.
+    In today’s competitive market, understanding customer spending behavior is crucial for businesses looking to optimize their product offerings and marketing strategies. By segmenting customers into distinct groups, companies can better tailor their marketing efforts.
+  </p>
   <p>
     Using the 
     <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
       Shop Customer Data
-    </a>, this project aims to ansIr:
+    </a>, this project aims to answer:
   </p>
   <ul>
-    <li>How can I group customers based on their attributes and behaviors? </li> 
+    <li>How can we group customers based on their attributes and behaviors?</li>
   </ul>
+  <p>
+    The goal is to uncover meaningful patterns in customer shopping behaviors that can be used to make smarter business decisions.
+  </p>
+  
+  <h2>Data Overview</h2>
+  <p>The dataset contains 2000 rows, each representing a customer, with 8 features:</p>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Customer ID</td><td>Unique identifier for each customer.</td></tr>
+      <tr><td>Gender</td><td>Gender of the customer.</td></tr>
+      <tr><td>Age</td><td>Age of the customer.</td></tr>
+      <tr><td>Annual Income</td><td>Annual income of the customer.</td></tr>
+      <tr><td>Spending Score</td><td>A score based on the customer's spending behavior.</td></tr>
+      <tr><td>Profession</td><td>Customer's profession.</td></tr>
+      <tr><td>Work Experience</td><td>Years of experience in their profession.</td></tr>
+      <tr><td>Family Size</td><td>Size of the customer's family.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What is Clustering?</h2>
+  <p>
+    Clustering is an unsupervised machine learning technique that groups data points based on similarity. It helps uncover natural groupings in data without predefined labels.
   </p>
   <p>
-    The goal is to uncover meaningful patterns in customer shopping behaviors that can actually be used to make smarter decisions.
-  </p>
-  
-  <h2>Introduce the data</h2>
-  <p>The dataset contains 2000 rows, each representing instances of an accident, and 8 features. The features include:</p>
-
-<table border="1">
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Customer ID</td>
-      <td>A unique identifier assigned to each customer.</td>
-    </tr>
-    <tr>
-      <td>Gender</td>
-      <td>The gender of the customer.</td>
-    </tr>
-    <tr>
-      <td>Age</td>
-      <td>The age of the customer.</td>
-    </tr>
-    <tr>
-      <td>Annual Income</td>
-      <td>The annual income of the customer, representing their purchasing poIr.</td>
-    </tr>
-    <tr>
-      <td>Spending Score</td>
-      <td>A score assigned by the shop based on the customer’s spending behavior.</td>
-    </tr>
-    <tr>
-      <td>Profession</td>
-      <td>The profession of the customer.</td>
-    </tr>
-    <tr>
-      <td>Work Experience</td>
-      <td>The number of years the customer has been in their profession.</td>
-    </tr>
-    <tr>
-      <td>Family Size</td>
-      <td>The size of the customer’s family, potentially influencing their purchasing decisions.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-  <h2>What is clustering and how does it work?</h2>
-   <p>
-  Clustering is a type of unsupervised machine learning that groups data points based on similarity. It helps us find natural groupings in data without predefined labels.
-    For this project, clustering allows us to discover customer segments with similar shopping behaviors. It’s useful for things like personalized marketing or promotions. 
-    There are several types of clustering like Hierarchical Clustering and Agglomerative Clustering, but I used K-Means Clustering, which is one of the most popular ones.
+    In this project, clustering is used to identify customer segments with similar shopping behaviors, which can help businesses target specific groups more effectively.
   </p>
   <p>
-  <strong>K-Means Clustering</strong> is an algorithm that divides data into <em>k</em> groups, where each group is represented by its center (the average of the points in the group). The algorithm works by repeatedly assigning each data point to the closest group center and then updating the center based on the points in the group. This process continues until the centers no longer change or a set number of iterations is reached.
-</p>
+    I used <strong>K-Means Clustering</strong>, a popular method that divides data into <em>k</em> groups by minimizing the distance between points and their respective group centers.
+  </p>
   
-  <h2>Pre-processing the data</h2>
-   <p>
-Before performing clustering, the dataset was cleaned and preprocessed. This included:
-<ul>
-  <li>Handling missing values by either filling or dropping them..</li>
-  <li>Encoding the categorical variables, Gender and Profession by using One-Hot Encoding.</li>
-  <li>Standardizing numerical features like Age and Income to make sure everything’s on the same scale..</li>
-</ul>
- These steps help ensure each feature contributes fairly to the clustering algorithm.
-</p>
-  
-  <h2>Data Understanding/Visualization</h2>
+  <h2>Data Preprocessing</h2>
   <p>
-I explored the distribution of key variables such as Age, Annual Income, and Spending Score. Using visualizations like histograms and scatter plots, I identified patterns and potential outliers. 
-A scatter plot of Annual Income vs Spending Score was especially helpful to visualize natural groupings before applying clustering algorithms.
-</p>
-<img src="../docs/b4a0d9bb-b7e1-49b7-b10a-a122461ae11b.png" alt="heatmap">
-  <img src="../docs/b4942beb-b837-4824-91de-a0280173a2ad.png" alt="distribution">
-  <img src="../docs/371f586f-1623-4644-837d-343edf05ed7e.png" alt="boxplot">
-  <h2>Modeling (Clustering)</h2>
-<p>
-I used K-Means Clustering. To find the best number of clusters (k), I used the Elbow and Silhouette methods. I used on 6 clusters. Then, I fit the model and assigned each customer to one of these clusters.
-</p>
-<img src="../docs/e6a7320f-92ee-4d75-9649-6c28c1ea991f.png" alt="elbow and sil">
-  <img src="../docs/b2b5820e-69d5-4cc2-8db2-bdd9c30eb234.png" alt="2d clustering">
-  <img src="../docs/731c2a4f-36ca-407a-9435-9ce5c096a7d2.png" alt="3d clustering">
-  <h2>Storytelling (Clustering Analysis)</h2>
-<p>
-Here’s a quick breakdown of what each cluster looked like:
-<ul>
-  <li>Cluster 1: Older individuals with decent income who spend moderately.</li>
-  <li>Cluster 2: Middle-aged high earners who tend to spend a lot.</li>
-  <li>Cluster 3: Middle-aged people with low income and very low spending.</li>
-  <li>Cluster 4: Wealthy but conservative middle-aged spenders.</li>
-  <li>Cluster 5: Older, moderate earners who spend very little</li>
-  <li>Cluster 6: Younger, low-income group with the lowest spending.</li>
-</ul>
-</p>
-<img src="../docs/787a04c6-413d-4983-8467-eb0ebb599146.png" alt="1">
-  <img src="../docs/30febe48-73d8-4dad-944e-4aed34f898c0.png" alt="2">
-  <img src="../docs/5b6a916f-0abf-4308-954d-63fc4e4e304c.png" alt="3">
-  <img src="../docs/38525755-e5e1-4c6e-8cec-97a0f3277c69.png" alt="4">
-  <img src="../docs/aa179afe-595b-4125-a179-6aa41913096c.png" alt="5">
-  <img src="../docs/f2f619ef-66d0-4934-9130-b9ad5724a6ec.png" alt="6">
-  <img src="../docs/Screenshot (12).png" alt="summary stats">
-  <h2>Impact Section</h2>
-<p>
-    This project can help businesses figure out what’s working for each customer group and improve marketing strategies. But handling personal demographic data raises privacy concerns, and there’s a risk of overgeneralizing. There is also factors like customer interests, values, and lifestyles missing from the data that gives a deeper explain of why people buy certain things.
-</p>
-  
-  <h2>My Code</h2>
-   <!-- I used https://nbvieIr.jupyter.org/  -->
+    Before clustering, the data was cleaned and prepared:
+  </p>
+  <ul>
+    <li>Handled missing values by filling or dropping them.</li>
+    <li>Encoded categorical variables (Gender and Profession) using One-Hot Encoding.</li>
+    <li>Standardized numerical features like Age and Income to ensure all features were on the same scale.</li>
+  </ul>
+
+  <h2>Data Exploration and Visualization</h2>
+  <p>
+    I analyzed the distribution of key variables such as Age, Annual Income, and Spending Score. Visualizations like histograms, scatter plots, and boxplots helped identify patterns and potential outliers.
+  </p>
+  <img src="../docs/b4a0d9bb-b7e1-49b7-b10a-a122461ae11b.png" alt="Heatmap">
+  <img src="../docs/b4942beb-b837-4824-91de-a0280173a2ad.png" alt="Distribution Plot">
+  <img src="../docs/371f586f-1623-4644-837d-343edf05ed7e.png" alt="Boxplot">
+
+  <h2>Modeling: K-Means Clustering</h2>
+  <p>
+    I used the Elbow Method and Silhouette Analysis to determine the optimal number of clusters. Based on the results, I chose 6 clusters and fit the K-Means model to the data.
+  </p>
+  <img src="../docs/e6a7320f-92ee-4d75-9649-6c28c1ea991f.png" alt="Elbow and Silhouette Analysis">
+  <img src="../docs/b2b5820e-69d5-4cc2-8db2-bdd9c30eb234.png" alt="2D Clustering">
+  <img src="../docs/731c2a4f-36ca-407a-9435-9ce5c096a7d2.png" alt="3D Clustering">
+
+  <h2>Clustering Analysis</h2>
+  <p>Each cluster can be interpreted as follows:</p>
+  <ul>
+    <li><strong>Cluster 1:</strong> Older individuals with decent income who spend moderately.</li>
+    <li><strong>Cluster 2:</strong> Middle-aged high earners who spend heavily.</li>
+    <li><strong>Cluster 3:</strong> Middle-aged low-income individuals with minimal spending.</li>
+    <li><strong>Cluster 4:</strong> Wealthy but conservative spenders.</li>
+    <li><strong>Cluster 5:</strong> Older moderate earners with low spending.</li>
+    <li><strong>Cluster 6:</strong> Younger low-income group with minimal spending.</li>
+  </ul>
+
+  <img src="../docs/787a04c6-413d-4983-8467-eb0ebb599146.png" alt="Cluster 1">
+  <img src="../docs/30febe48-73d8-4dad-944e-4aed34f898c0.png" alt="Cluster 2">
+  <img src="../docs/5b6a916f-0abf-4308-954d-63fc4e4e304c.png" alt="Cluster 3">
+  <img src="../docs/38525755-e5e1-4c6e-8cec-97a0f3277c69.png" alt="Cluster 4">
+  <img src="../docs/aa179afe-595b-4125-a179-6aa41913096c.png" alt="Cluster 5">
+  <img src="../docs/f2f619ef-66d0-4934-9130-b9ad5724a6ec.png" alt="Cluster 6">
+  <img src="../docs/Screenshot (12).png" alt="Summary Statistics">
+
+  <h2>Impact and Ethical Considerations</h2>
+  <p>
+    This project can help businesses fine-tune their marketing and product strategies for different customer groups. However, collecting and using personal demographic data raises privacy concerns. Also, missing factors like interests, values, and lifestyles mean clustering alone won't fully explain customer behavior.
+  </p>
+
+  <h2>Code</h2>
+  <p>
+    The full code is available below:
+  </p>
   <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
 
   <h2>References</h2>
   <ul>
-    <li>
-      <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
-        Shop Customer Data - Kaggle
-      </a>
-    </li>
-    <li>
-      <a href="https://www.geeksforgeeks.org/clustering-in-machine-learning/?ref=header_outind" target="_blank">
-        Clustering in Machine Learning - geeksforgeeks
-      </a>
-    </li>
-    <li>
-      <a href="https://chatgpt.com/" target="_blank">
-        ChatGPT - OpenAI 
-      </a>
-      <em> (ChatGPT helped with debugging and coding concepts; all final work is my own.)</em>
-    </li>
+    <li><a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">Shop Customer Data - Kaggle</a></li>
+    <li><a href="https://www.geeksforgeeks.org/clustering-in-machine-learning/?ref=header_outind" target="_blank">Clustering in Machine Learning - GeeksforGeeks</a></li>
+    <li><a href="https://chatgpt.com/" target="_blank">ChatGPT - OpenAI</a> <em>(Used for debugging and concept clarification.)</em></li>
   </ul>
-
 </body>
 </html>
