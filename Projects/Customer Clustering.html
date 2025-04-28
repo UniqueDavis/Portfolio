@@ -9,22 +9,25 @@
   <h1>Project Four: Customer Shop Clustering</h1>
   
   <h2>Introduction</h2>
-  <p>
-    In today’s competitive market, understanding customer spending behavior is crucial for businesses looking to optimize their product offerings and marketing strategies. By segmenting customers into distinct groups, companies can better tailor their marketing efforts.
-  </p>
-  <p>
-    Using the 
-    <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
-      Shop Customer Data
-    </a>, this project aims to answer:
-  </p>
-  <ul>
-    <li>How can we group customers based on their attributes and behaviors?</li>
-  </ul>
-  <p>
-    The goal is to uncover meaningful patterns in customer shopping behaviors that can be used to make smarter business decisions.
-  </p>
-  
+<p>
+  In today’s competitive market, understanding customer spending behavior is crucial for businesses that want to stay ahead. Without clear insights, companies risk wasting resources on products and marketing strategies that don't connect with their audiences. Segmenting customers into distinct groups can help businesses target their efforts more effectively and make smarter decisions.
+</p>
+<p>
+  Using the 
+  <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
+    Shop Customer Data
+  </a>, this project applies clustering techniques to find patterns in customer behavior. By analyzing factors like age, income, and spending scores, we aim to uncover groups with similar traits and preferences.
+</p>
+<p>
+  This analysis is not without challenges. Customers are complex, and demographic attributes alone don’t capture their full decision-making process. However, clustering provides a starting point for creating more targeted strategies, personalizing marketing, and improving customer engagement.
+</p>
+<ul>
+  <li>How can we group customers based on their attributes and behaviors?</li>
+</ul>
+<p>
+  The goal is to turn raw data into actionable insights that businesses can use to make better marketing, product development, and overall strategic decisions.
+</p>
+
   <h2>Data Overview</h2>
   <p>The dataset contains 2000 rows, each representing a customer, with 8 features:</p>
 
@@ -60,7 +63,7 @@
   
   <h2>Data Preprocessing</h2>
   <p>
-    Before clustering, the data was cleaned and prepared:
+    Before clustering, the data was cleaned and prepared by:
   </p>
   <ul>
     <li>Handled missing values by filling or dropping them.</li>
@@ -70,7 +73,7 @@
 
   <h2>Data Exploration and Visualization</h2>
   <p>
-    I analyzed the distribution of key variables such as Age, Annual Income, and Spending Score. Visualizations like histograms, scatter plots, and boxplots helped identify patterns and potential outliers.
+    I analyzed the distribution of key variables such as Age, Annual Income, and Spending Score. Visualizations like histograms, heatmaps, and boxplots helped identify patterns and potential outliers.
   </p>
   <img src="../docs/b4a0d9bb-b7e1-49b7-b10a-a122461ae11b.png" alt="Heatmap"width="800">
   <img src="../docs/b4942beb-b837-4824-91de-a0280173a2ad.png" alt="Distribution Plot"width="800">
@@ -85,7 +88,7 @@
   <img src="../docs/731c2a4f-36ca-407a-9435-9ce5c096a7d2.png" alt="3D Clustering">
 
   <h2>Clustering Analysis</h2>
-  <p>Each cluster can be interpreted as follows:</p>
+  <p>I interpreted each cluster as follows:</p>
   <ul>
     <li><strong>Cluster 1:</strong> Older individuals with decent income who spend moderately.</li>
     <li><strong>Cluster 2:</strong> Middle-aged high earners who spend heavily.</li>
@@ -95,17 +98,15 @@
     <li><strong>Cluster 6:</strong> Younger low-income group with minimal spending.</li>
   </ul>
 
-  <img src="../docs/787a04c6-413d-4983-8467-eb0ebb599146.png" alt="Cluster 1" width="800">
-  <img src="../docs/30febe48-73d8-4dad-944e-4aed34f898c0.png" alt="Cluster 2" width="800">
-  <img src="../docs/5b6a916f-0abf-4308-954d-63fc4e4e304c.png" alt="Cluster 3" width="800">
-  <img src="../docs/38525755-e5e1-4c6e-8cec-97a0f3277c69.png" alt="Cluster 4" width="800">
-  <img src="../docs/aa179afe-595b-4125-a179-6aa41913096c.png" alt="Cluster 5" width="800">
-  <img src="../docs/f2f619ef-66d0-4934-9130-b9ad5724a6ec.png" alt="Cluster 6" width="800">
+  <p>In my code I evaluate the different clusters further. Here are the Summary Statistics: </p>
   <img src="../docs/Screenshot (12).png" alt="Summary Statistics" width="600">
 
   <h2>Impact and Ethical Considerations</h2>
   <p>
-    This project can help businesses fine-tune their marketing and product strategies for different customer groups. However, collecting and using personal demographic data raises privacy concerns. Also, missing factors like interests, values, and lifestyles mean clustering alone won't fully explain customer behavior.
+    This project can help businesses fine-tune their marketing and product strategies by understanding different customer groups better. Clustering customers by demographics can lead to more targeted ads, improved products, and smarter spending. But collecting and using personal data comes with serious privacy concerns, especially if people aren't aware their information is being analyzed this way. Businesses could also easily cross a line by making unfair assumptions about customers based only on surface-level traits.
+  </p>
+  <p>
+    On top of that, clustering alone leaves out a lot. It doesn’t capture things like personal values, interests, or lifestyle choices, which often drive real buying behavior. Relying too much on basic demographic clusters could cause businesses to miss the bigger picture and make decisions that don't actually connect with their customers. Overall, clustering is a useful tool, but without deeper context and responsible data use, it risks causing more problems than it solves.
   </p>
 
   <h2>Code</h2>
