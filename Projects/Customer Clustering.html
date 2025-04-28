@@ -80,10 +80,15 @@
   <img src="../docs/371f586f-1623-4644-837d-343edf05ed7e.png" alt="Boxplot">
 
   <h2>Modeling: K-Means Clustering</h2>
+  <p>For this project, I chose the K-Means clustering algorithm to segment the customer data into distinct groups. The decision to use K-Means was based on several factors related to its strengths and suitability for the dataset at hand.</p>
+
+<p>One of the key reasons for selecting K-Means was its efficiency in handling large datasets. K-Means works well when the number of clusters is known beforehand and when the data is continuous. Given the relatively high number of customers in the dataset and the need for quick and interpretable results, K-Means was a natural choice. Additionally, the simplicity of K-Means—focusing on minimizing intra-cluster variance—made it easy to implement and understand, aligning well with the objective of grouping customers based on their spending behaviors.</p>
   <p>
     I used the Elbow Method and Silhouette Analysis to determine the optimal number of clusters. Based on the results, I chose 6 clusters and fit the K-Means model to the data.
   </p>
   <img src="../docs/e6a7320f-92ee-4d75-9649-6c28c1ea991f.png" alt="Elbow and Silhouette Analysis">
+
+   <p> The 2D and 3D clustering plots further validate the clusters and demonstrate how well K-Means was able to group similar customers together:</p>
   <img src="../docs/b2b5820e-69d5-4cc2-8db2-bdd9c30eb234.png" alt="2D Clustering">
   <img src="../docs/731c2a4f-36ca-407a-9435-9ce5c096a7d2.png" alt="3D Clustering">
 
