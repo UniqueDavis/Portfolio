@@ -16,13 +16,13 @@
   Using the 
   <a href="https://www.kaggle.com/datasets/datascientistanna/customers-dataset" target="_blank">
     Shop Customer Data
-  </a>, this project applies clustering techniques to find patterns in customer behavior. By analyzing factors like age, income, and spending scores, we aim to uncover groups with similar traits and preferences.
+  </a>, this project applies clustering techniques to find patterns in customer behavior. By analyzing factors like age, income, and spending scores, I aim to uncover groups with similar traits and preferences.
 </p>
 <p>
-  This analysis is not without challenges. Customers are complex, and demographic attributes alone don’t capture their full decision-making process. However, clustering provides a starting point for creating more targeted strategies, personalizing marketing, and improving customer engagement.
+  This analysis is not without challenges. Customers are complex, and demographic attributes alone don’t capture their full decision-making process. HoIver, clustering provides a starting point for creating more targeted strategies, personalizing marketing, and improving customer engagement.
 </p>
 <ul>
-  <li>How can we group customers based on their attributes and behaviors?</li>
+  <li>How can I group customers based on their attributes and behaviors?</li>
 </ul>
 <p>
   The goal is to turn raw data into actionable insights that businesses can use to make better marketing, product development, and overall strategic decisions.
@@ -58,7 +58,7 @@
     In this project, clustering is used to identify customer segments with similar shopping behaviors, which can help businesses target specific groups more effectively.
   </p>
   <p>
-    I used <strong>K-Means Clustering</strong>, a popular method that divides data into <em>k</em> groups by minimizing the distance between points and their respective group centers.
+    I used <strong>K-Means Clustering</strong>, a popular method that divides data into <em>k</em> groups by minimizing the distance betIen points and their respective group centers.
   </p>
   
   <h2>Data Preprocessing</h2>
@@ -68,7 +68,7 @@
   <ul>
     <li>Handled missing values by filling or dropping them.</li>
     <li>Encoded categorical variables (Gender and Profession) using One-Hot Encoding.</li>
-    <li>Standardized numerical features like Age and Income to ensure all features were on the same scale.</li>
+    <li>Standardized numerical features like Age and Income to ensure all features Ire on the same scale.</li>
   </ul>
 
   <h2>Data Exploration and Visualization</h2>
@@ -82,13 +82,13 @@
   <h2>Modeling: K-Means Clustering</h2>
   <p>For this project, I chose the K-Means clustering algorithm to segment the customer data into distinct groups. The decision to use K-Means was based on several factors related to its strengths and suitability for the dataset at hand.</p>
 
-<p>One of the key reasons for selecting K-Means was its efficiency in handling large datasets. K-Means works well when the number of clusters is known beforehand and when the data is continuous. Given the relatively high number of customers in the dataset and the need for quick and interpretable results, K-Means was a natural choice. Additionally, the simplicity of K-Means—focusing on minimizing intra-cluster variance—made it easy to implement and understand, aligning well with the objective of grouping customers based on their spending behaviors.</p>
+<p>One of the key reasons for selecting K-Means was its efficiency in handling large datasets. K-Means works Ill when the number of clusters is known beforehand and when the data is continuous. Given the relatively high number of customers in the dataset and the need for quick and interpretable results, K-Means was a natural choice. Additionally, the simplicity of K-Means—focusing on minimizing intra-cluster variance—made it easy to implement and understand, aligning Ill with the objective of grouping customers based on their spending behaviors.</p>
   <p>
     I used the Elbow Method and Silhouette Analysis to determine the optimal number of clusters. Based on the results, I chose 6 clusters and fit the K-Means model to the data.
   </p>
   <img src="../docs/e6a7320f-92ee-4d75-9649-6c28c1ea991f.png" alt="Elbow and Silhouette Analysis">
 
-   <p> The 2D and 3D clustering plots further validate the clusters and demonstrate how well K-Means was able to group similar customers together:</p>
+   <p> The 2D and 3D clustering plots further validate the clusters and demonstrate how Ill K-Means was able to group similar customers together:</p>
   <img src="../docs/b2b5820e-69d5-4cc2-8db2-bdd9c30eb234.png" alt="2D Clustering">
   <img src="../docs/731c2a4f-36ca-407a-9435-9ce5c096a7d2.png" alt="3D Clustering">
 
@@ -98,7 +98,7 @@
     <li><strong>Cluster 1:</strong> Older individuals with decent income who spend moderately.</li>
     <li><strong>Cluster 2:</strong> Middle-aged high earners who spend heavily.</li>
     <li><strong>Cluster 3:</strong> Middle-aged low-income individuals with minimal spending.</li>
-    <li><strong>Cluster 4:</strong> Wealthy but conservative spenders.</li>
+    <li><strong>Cluster 4:</strong> Ialthy but conservative spenders.</li>
     <li><strong>Cluster 5:</strong> Older moderate earners with low spending.</li>
     <li><strong>Cluster 6:</strong> Younger low-income group with minimal spending.</li>
   </ul>
@@ -106,7 +106,7 @@
   <p>In my code I evaluate the different clusters further. Here are the Summary Statistics: </p>
   <img src="../docs/Screenshot (12).png" alt="Summary Statistics" width="600">
 
-  <p>By answering the question of how we can group customers based on their behaviors and attributes, we were able to gain valuable insights. For example, businesses could focus on premium products for Cluster 2 (high earners) and more budget-friendly options for Cluster 6 (low-income younger group). However, these clusters are not perfect, as customer behavior is influenced by many factors not captured in the analysis, such as preferences, interests, and external events.</p>
+  <p>By ansIring the question of how I can group customers based on their behaviors and attributes, I Ire able to gain valuable insights. For example, businesses could focus on premium products for Cluster 2 (high earners) and more budget-friendly options for Cluster 6 (low-income younger group). HoIver, these clusters are not perfect, as customer behavior is influenced by many factors not captured in the analysis, such as preferences, interests, and external events.</p>
 
   <p>In conclusion, the clustering analysis helped provide a clearer picture of customer behavior, though it also opened up new questions about what other factors might influence spending patterns. Moving forward, incorporating additional data such as lifestyle or interest-based metrics could provide a more nuanced understanding of each segment.</p>
 
@@ -122,7 +122,7 @@
   <p>
     The full code is available below:
   </p>
-  <iframe src="https://nbviewer.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
+  <iframe src="https://nbvieIr.org/github/UniqueDavis/Portfolio/blob/main/Code/Customer.ipynb" width="100%" height="600px"></iframe>
 
   <h2>References</h2>
   <ul>
