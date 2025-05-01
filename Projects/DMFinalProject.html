@@ -19,26 +19,38 @@
   <a href="https://www.kaggle.com/datasets/theoverman/the-spotify-hit-predictor-dataset" target="_blank">
     The Spotify Hit Predictor Dataset (1960-2019)</a>
   </p>
-  <p>The dataset contains 2000 rows, each representing a customer, with 8 features. The dataset consists of different tracks from the 60s to 2019. We have decided to look specifically into the 80s for our project. Each song has a target value of 0-1, 0 indicating the song is a flop and 1 indicating the song is a hit. Additionally, each song has several audio features, such as:</p>
+  <p>The dataset contains 6908 rows, each representing a track, with 19 features. The dataset consists of different tracks from the 60s to 2019. We have decided to look specifically into the 80s for our project. Each song has a target value of 0-1, 0 indicating the song is a flop and 1 indicating the song is a hit. Additionally, each song has several audio features, such as:</p>
 
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Customer ID</td><td>Unique identifier for each customer.</td></tr>
-      <tr><td>Gender</td><td>Gender of the customer.</td></tr>
-      <tr><td>Age</td><td>Age of the customer.</td></tr>
-      <tr><td>Annual Income</td><td>Annual income of the customer.</td></tr>
-      <tr><td>Spending Score</td><td>A score based on the customer's spending behavior.</td></tr>
-      <tr><td>Profession</td><td>Customer's profession.</td></tr>
-      <tr><td>Work Experience</td><td>Years of experience in their profession.</td></tr>
-      <tr><td>Family Size</td><td>Size of the customer's family.</td></tr>
-    </tbody>
-  </table>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>track</td><td>Name of the track.</td></tr>
+    <tr><td>artist</td><td>Name of the artist.</td></tr>
+    <tr><td>uri</td><td>Spotify resource ID for the track.</td></tr>
+    <tr><td>danceability</td><td>How suitable the track is for dancing (0.0–1.0).</td></tr>
+    <tr><td>energy</td><td>Intensity and activity level of the track (0.0–1.0).</td></tr>
+    <tr><td>key</td><td>Musical key of the track (e.g., 0 = C, 1 = C♯/D♭).</td></tr>
+    <tr><td>loudness</td><td>Average loudness in decibels (dB).</td></tr>
+    <tr><td>mode</td><td>1 = major, 0 = minor.</td></tr>
+    <tr><td>speechiness</td><td>Presence of spoken words (0.0–1.0).</td></tr>
+    <tr><td>acousticness</td><td>Likelihood of being an acoustic track (0.0–1.0).</td></tr>
+    <tr><td>instrumentalness</td><td>Likelihood the track has no vocals (0.0–1.0).</td></tr>
+    <tr><td>liveness</td><td>Likelihood the track is live (0.0–1.0).</td></tr>
+    <tr><td>valence</td><td>Musical positivity (0.0–1.0).</td></tr>
+    <tr><td>tempo</td><td>Tempo in beats per minute (BPM).</td></tr>
+    <tr><td>duration_ms</td><td>Duration of the track in milliseconds.</td></tr>
+    <tr><td>time_signature</td><td>Estimated time signature (e.g., 4 = 4/4).</td></tr>
+    <tr><td>chorus_hit</td><td>Estimated timestamp of chorus start.</td></tr>
+    <tr><td>sections</td><td>Number of sections in the track.</td></tr>
+    <tr><td>target</td><td>1 = hit, 0 = flop (based on Billboard Hot-100).</td></tr>
+  </tbody>
+</table>
+
 
   <p>
     The 80s song dataset has over 2000 unique songs, along with 19 different columns that will allow us to explore trends through different modeling techniques. Before modeling, we will perform EDA to better understand the distribution and correlation of features.
@@ -82,7 +94,8 @@
   <p>
     The full code is available below:
   </p>
-  <iframe src="" width="100%" height="600px"></iframe>
+  <iframe src="https://nbviewer.org/github/griffin-nixdorf/ITSC3162-Final-Project/blob/main/Data%20Mining%20Final%20Pre-Processing.ipynb" width="100%" height="600px"></iframe>
+  <iframe src="https://nbviewer.org/github/griffin-nixdorf/ITSC3162-Final-Project/blob/main/Data_Mining_Final_Modeling.ipynb" width="100%" height="600px"></iframe>
 
   <h2>References</h2>
   <ul>
