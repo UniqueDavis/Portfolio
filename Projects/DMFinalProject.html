@@ -57,6 +57,15 @@
   <p>
     The 80s song dataset has 6908 unique songs, along with 19 different columns that will allow us to explore trends through different modeling techniques. Before modeling, we will perform EDA to better understand the distribution and correlation of features.
   </p>
+  <p>
+    Before conducting any analysis, we began by preparing the dataset to ensure consistency and reliability. Our focus was specifically on songs from the 1980s, so we filtered the Spotify Hit Predictor dataset accordingly, resulting in a final set of 6,908 songs. We then checked for missing values and found none, confirming that the dataset was complete. Additionally, we examined the class distribution of our target variable, whether a song was a hit or a flop, and found it to be perfectly balanced, with 3,454 songs in each category. This balance is ideal for training a binary classification model without introducing bias.
+  </p>
+  <p>
+    To streamline our analysis, we dropped non-predictive columns such as track, artist, and URI, which contain text-based identifiers rather than useful numerical features. Next, we standardized the remaining numerical features using StandardScaler, ensuring that each feature was on the same scale and that no single variable would dominate the model due to differing units or ranges. We also created boxplots for each audio feature to visually inspect distributions and identify any potential outliers or skewness.
+  </p>
+  <p>
+    In order to better understand relationships between variables, we generated a correlation matrix and examined the strength of each feature's association with the target variable. Finally, we calculated the Variance Inflation Factor (VIF) to check for multicollinearity among features. Most features fell within an acceptable range, although duration_ms and sections showed moderately elevated VIF scores, indicating some correlation with other variables. These pre-processing steps provided a solid foundation for further exploration and model development by ensuring that the data was clean, well-structured, and ready for analysis.
+  </p>
   <h2>Methods</h2>
   <p>We are approaching the problem as a binary classification task (<strong>Hit</strong> vs. <strong>Flop</strong>) using one of two supervised learning models:</p>
   
