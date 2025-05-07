@@ -12,7 +12,7 @@
   
   <h2>Introduction</h2>
 <p>
-  What made a song popular in the 80s? There are many different complex factors, such as artistic values like rhythm, danceability, liveness, and many more, along with consumer behavior trends. Now that streaming platforms like Spotify collect comprehensive data on song characteristics and trends, we can track audio features like tempo, danceability, and energy levels to see if a song will become a hit. Our goal is to analyze these features and make a predictive model to see if a song made in the 80s will become a hit or not. This analysis could be useful to artists, producers, and labels that are interested in seeing what features have a high association with the probability of making a hit song.
+  What made a song popular in the 80s? There are many different complex factors, such as artistic values like rhythm, danceability, liveness, and many more, along with consumer behavior trends. Now that streaming platforms like Spotify collect comprehensive data on song characteristics and trends, we can track audio features like tempo, danceability, and energy levels to see if a song will become a hit. Our goal is to analyze these features and make a predictive model to see if a song made in the 80s will become a hit or not. 
 </p>
   
   <h2>About the Data</h2>
@@ -55,8 +55,9 @@
 
 
   <p>
-    The 80s song dataset has 6908 unique songs, along with 19 different columns that will allow us to explore trends through different modeling techniques. Before modeling, we will perform EDA to better understand the distribution and correlation of features.
+    The 80s song dataset has 6908 unique songs, along with 19 different columns that will allow us to explore trends through different modeling techniques.
   </p>
+  <h2>Methods</h2>
   <p>
     Before conducting any analysis, we began by preparing the dataset to ensure consistency and reliability. Our focus was specifically on songs from the 1980s, so we filtered the Spotify Hit Predictor dataset accordingly, resulting in a final set of 6,908 songs. We then checked for missing values and found none, confirming that the dataset was complete. Additionally, we examined the class distribution of our target variable, whether a song was a hit or a flop, and found it to be perfectly balanced, with 3,454 songs in each category. This balance is ideal for training a binary classification model without introducing bias.
   </p>
@@ -66,7 +67,7 @@
   <p>
     In order to better understand relationships between variables, we generated a correlation matrix and examined the strength of each feature's association with the target variable. Finally, we calculated the Variance Inflation Factor (VIF) to check for multicollinearity among features. Most features fell within an acceptable range, although duration_ms and sections showed moderately elevated VIF scores, indicating some correlation with other variables. These pre-processing steps provided a solid foundation for further exploration and model development by ensuring that the data was clean, well-structured, and ready for analysis.
   </p>
-  <h2>Methods</h2>
+  <img src="../docs/confmatrix.png" alt="1"width="600"> <img src="../docs/graph.png" alt="1"width="800">
   <p>We are approaching the problem as a binary classification task (<strong>Hit</strong> vs. <strong>Flop</strong>) using one of two supervised learning models:</p>
   
   <ul>
@@ -75,7 +76,7 @@
   </ul>
   
   <p>In addition, we’ll perform <strong>feature importance analysis</strong> (using permutation importance or model-specific methods) to determine which features contribute most to a song’s popularity. This could be insightful for understanding musical trends and knowing which features will be most useful to include in our model.</p>
-  <img src="../docs/preheatmap.png" alt="1"width="700"> <img src="../docs/preboxplot.png" alt="1"width="800">
+  
   <h2>Evaluation</h2>
   <p>Our evaluation will focus on measuring the performance of our classification models in predicting whether a song is a “hit” or a “flop” based on its audio features. We will use the following classification metrics to evaluate our models:</p>
   
