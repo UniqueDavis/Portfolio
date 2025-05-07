@@ -77,7 +77,10 @@
   </ul>
   
   <p>Additionally, we performed <strong>feature importance analysis</strong> (using permutation importance or model-specific methods) to determine which features contribute most to a song’s popularity. This could be insightful for understanding musical trends and knowing which features will be most useful to include in our model.</p>
-  
+
+  <p>
+    To model the data, we used a Random Forest classifier to predict whether a song from the 1980s would be a hit or a flop based on its audio features. After training the model on a balanced dataset, we tested its accuracy using standard classification metrics. The model performed well, especially in identifying hit songs, and produced solid scores across accuracy, precision, recall, and F1. We also examined the confusion matrix to get a clearer picture of where the model made errors. Feature importance scores showed that elements like danceability, energy, and valence played a key role in the predictions. We experimented with adjusting model settings to improve performance, but found that the original configuration gave the most consistent results.
+  </p>
   <h2>Evaluation</h2>
   <p>Our evaluation focuses on measuring the performance of our classification models in predicting whether a song is a “hit” or a “flop” based on its audio features. We are using the following classification metrics to evaluate our models:</p>
   
@@ -89,6 +92,10 @@
   </ul>
 
   <p>A <strong>confusion matrix</strong> will be used to visualize model performance across all of the prediction categories.</p>
+
+  <p>
+    Our Random Forest model achieved an accuracy of 81.2% and an F1 score of 0.79, showing strong performance on balanced data. The confusion matrix revealed that the model was slightly better at identifying hits than flops. We also tested a tuned version of the model with more trees and class balancing, but it did not improve performance, indicating the original setup was already well-suited for our data.
+  </p>
     <img src="../docs/confmatrix.png" alt="1"width="600"> <img src="../docs/graph.png" alt="1"width="800">
 
     <img src="../docs/download.png" alt="1"width="600">
