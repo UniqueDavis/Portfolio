@@ -90,7 +90,7 @@
 
   <p>A <strong>confusion matrix</strong> will be used to visualize model performance across all of the prediction categories.</p>
 
-    <h3>Logistic Regression</h3>
+    <h3>Logistic Regression Model</h3>
     <p>
         After preprocessing, we split the data: 75% to train the model and 25% to test it, using the same random seed each time to ensure identical results for all group members. A scikit-learn pipeline was used to scale the features and fit a logistic regression model with class-balanced weights. On the test set, it achieved 76% accuracy, 72% precision, 84% recall, and an F1 score of 0.78 (correctly identifying 726 hits and 586 flops). The learned weights showed that more danceable, louder, and happier (higher valence) songs are more likely to be hits, while instrumental or speech-like tracks tended to flop.
     </p>
@@ -100,7 +100,7 @@
     
     <img src="../docs/download.png" alt="1"width="600">
 
-    <h3>Random Forest</h3>
+    <h3>Random Forest Model</h3>
     <p>
         Next, we employed a Random Forest classifier to predict whether a song from the 1980s would be a hit or a flop based on its audio features. After training the model on a balanced dataset, we evaluated its performance using standard classification metrics. The model performed well, especially in identifying hit songs, producing strong scores across accuracy, precision, recall, and F1. We also examined the confusion matrix to better understand the model's errors.
     </p>
