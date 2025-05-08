@@ -72,27 +72,11 @@
   <p>We approached the problem as a binary classification task (<strong>Hit</strong> vs. <strong>Flop</strong>) using one of two supervised learning models:</p>
   
   <ul>
-    <li><strong>Logistic Regression</strong>: A good baseline model for binary classification.</li>
-    <li><strong>Random Forest</strong>: To capture non-linear relationships and identify important features.</li>
+    <li><strong>Logistic Regression Model</strong>: A good baseline model for binary classification.</li>
+    <li><strong>Random Forest Model</strong>: To capture non-linear relationships and identify important features.</li>
   </ul>
   
   <p>Additionally, we performed <strong>feature importance analysis</strong> (using permutation importance or model-specific methods) to determine which features contribute most to a song’s popularity.</p>
-
-  <h3>Logistic Regression</h3>
-    <p>
-        Using the fully numeric 80s song dataset from the preprocessing step, we split the data: 75% to train the model and 25% to test it, using the same random seed each time to ensure identical results for all group members. A scikit-learn pipeline was used to scale the features and fit a logistic regression model with class-balanced weights. On the test set, it achieved 76% accuracy, 72% precision, 84% recall, and an F1 score of 0.78 (correctly identifying 726 hits and 586 flops). The learned weights showed that more danceable, louder, and happier (higher valence) songs are more likely to be hits, while instrumental or speech-like tracks tended to flop.
-    </p>
-    <p>
-        This logistic model provides a simple, interpretable starting point and identifies key audio traits associated with hit songs. The trained model and its coefficient table were saved for quick reuse, allowing anyone to load them later without retraining the model.
-    </p>
-
-    <h3>Random Forest Classifier</h3>
-    <p>
-        Next, we employed a Random Forest classifier to predict whether a song from the 1980s would be a hit or a flop based on its audio features. After training the model on a balanced dataset, we evaluated its performance using standard classification metrics. The model performed well, especially in identifying hit songs, producing strong scores across accuracy, precision, recall, and F1. We also examined the confusion matrix to better understand the model's errors.
-    </p>
-    <p>
-        Our Random Forest model achieved an accuracy of 81.2% and an F1 score of 0.79. The confusion matrix revealed that the model was better at identifying hits than flops. Feature importance analysis showed that factors like danceability, energy, and valence were key predictors. We also tested a tuned version of the model with more trees and class balancing, but it did not improve performance, indicating the original configuration was already well-suited to the data.
-    </p>
 
   <h2>Evaluation</h2>
   <p>Our evaluation focuses on measuring the performance of our classification models in predicting whether a song is a “hit” or a “flop” based on its audio features. We are using the following classification metrics to evaluate our models:</p>
@@ -105,14 +89,30 @@
   </ul>
 
   <p>A <strong>confusion matrix</strong> will be used to visualize model performance across all of the prediction categories.</p>
+
+    <h3>Logistic Regression</h3>
+    <p>
+        Using the fully numeric 80s song dataset from the preprocessing step, we split the data: 75% to train the model and 25% to test it, using the same random seed each time to ensure identical results for all group members. A scikit-learn pipeline was used to scale the features and fit a logistic regression model with class-balanced weights. On the test set, it achieved 76% accuracy, 72% precision, 84% recall, and an F1 score of 0.78 (correctly identifying 726 hits and 586 flops). The learned weights showed that more danceable, louder, and happier (higher valence) songs are more likely to be hits, while instrumental or speech-like tracks tended to flop.
+    </p>
+    <p>
+        This logistic model provides a simple, interpretable starting point and identifies key audio traits associated with hit songs. The trained model and its coefficient table were saved for quick reuse, allowing anyone to load them later without retraining the model.
+    </p>
+    
+    <img src="../docs/download.png" alt="1"width="600">
+
+    <h3>Random Forest</h3>
+    <p>
+        Next, we employed a Random Forest classifier to predict whether a song from the 1980s would be a hit or a flop based on its audio features. After training the model on a balanced dataset, we evaluated its performance using standard classification metrics. The model performed well, especially in identifying hit songs, producing strong scores across accuracy, precision, recall, and F1. We also examined the confusion matrix to better understand the model's errors.
+    </p>
+    <p>
+        Our Random Forest model achieved an accuracy of 81.2% and an F1 score of 0.79. The confusion matrix revealed that the model was better at identifying hits than flops. Feature importance analysis showed that factors like danceability, energy, and valence were key predictors. We also tested a tuned version of the model with more trees and class balancing, but it did not improve performance, indicating the original configuration was already well-suited to the data.
+    </p>
   
     <img src="../docs/confmatrix.png" alt="1"width="600"> <img src="../docs/graph.png" alt="1"width="800">
 
-    <img src="../docs/download.png" alt="1"width="600">
-
   <h2>Storytelling and Conclusion</h2>
   <p>
-    Artists and music labels in the ‘80s had to rely on feelings and trending songs to potentially craft hits. Looking through the modern lens by utilizing resources such as Spotify audio feature data to ask questions like, “Could we have predicted the next generational hit based on measured song traits? ” Which leads to describing how our data collection may answer this question. We filtered 6,908 songs to confirm the balance between the hits and flops of that era, distilling the tracks to their core features such as danceability, energy, valence, etc. From there, we weave in our model development narrative—first with logistic regression as a transparent baseline, then with Random Forests to capture more complex, non-linear patterns. This leads us to discover moments of insight (e.g., discovering that high danceability and valence consistently mark hits ) and challenges (e.g., navigating multicollinearity in features like duration_ms and sections). This storyline highlights how data science can recreate—and even anticipate—the creative decisions that drove ‘80s pop culture.
+    Artists and music labels in the 80s had to rely on feelings and trending songs to potentially craft hits. Looking through the modern lens by utilizing resources such as Spotify audio feature data to ask questions like, “Could we have predicted the next generational hit based on measured song traits? ” Which leads to describing how our data collection may answer this question. We filtered 6,908 songs to confirm the balance between the hits and flops of that era, distilling the tracks to their core features such as danceability, energy, valence, etc. From there, we weave in our model development narrative—first with logistic regression as a transparent baseline, then with Random Forests to capture more complex, non-linear patterns. This leads us to discover moments of insight (e.g., discovering that high danceability and valence consistently mark hits ) and challenges (e.g., navigating multicollinearity in features like duration_ms and sections). This storyline highlights how data science can recreate—and even anticipate—the creative decisions that drove ‘80s pop culture.
   </p>
 
   <p>
