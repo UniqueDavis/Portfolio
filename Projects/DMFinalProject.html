@@ -69,7 +69,7 @@
   </p>
   <img src="../docs/preheatmap.png" alt="1"width="700"> <img src="../docs/preboxplot.png" alt="1"width="800">
   
-  <p>We approached the problem as a binary classification task (<strong>Hit</strong> vs. <strong>Flop</strong>) using one of two supervised learning models:</p>
+  <p>We approached the problem as a binary classification task (<strong>Hit</strong> vs. <strong>Flop</strong>) using two supervised learning models:</p>
   
   <ul>
     <li><strong>Logistic Regression Model</strong>: A good baseline model for binary classification.</li>
@@ -92,7 +92,7 @@
 
     <h3>Logistic Regression</h3>
     <p>
-        Using the fully numeric 80s song dataset from the preprocessing step, we split the data: 75% to train the model and 25% to test it, using the same random seed each time to ensure identical results for all group members. A scikit-learn pipeline was used to scale the features and fit a logistic regression model with class-balanced weights. On the test set, it achieved 76% accuracy, 72% precision, 84% recall, and an F1 score of 0.78 (correctly identifying 726 hits and 586 flops). The learned weights showed that more danceable, louder, and happier (higher valence) songs are more likely to be hits, while instrumental or speech-like tracks tended to flop.
+        After preprocessing, we split the data: 75% to train the model and 25% to test it, using the same random seed each time to ensure identical results for all group members. A scikit-learn pipeline was used to scale the features and fit a logistic regression model with class-balanced weights. On the test set, it achieved 76% accuracy, 72% precision, 84% recall, and an F1 score of 0.78 (correctly identifying 726 hits and 586 flops). The learned weights showed that more danceable, louder, and happier (higher valence) songs are more likely to be hits, while instrumental or speech-like tracks tended to flop.
     </p>
     <p>
         This logistic model provides a simple, interpretable starting point and identifies key audio traits associated with hit songs. The trained model and its coefficient table were saved for quick reuse, allowing anyone to load them later without retraining the model.
